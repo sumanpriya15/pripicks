@@ -103,7 +103,10 @@
 
           <!-- Read More Button -->
           <div class="px-6 pb-6">
-            <button class="w-full py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-xl hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform group-hover:scale-105 shadow-md hover:shadow-lg">
+            <button 
+              (click)="openArticle(post)"
+              class="w-full py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-xl hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform group-hover:scale-105 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-orange-300"
+            >
               Read Full Article →
             </button>
           </div>

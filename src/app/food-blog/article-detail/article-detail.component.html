@@ -1,0 +1,176 @@
+@if (article()) {
+  <div class="min-h-screen bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 relative overflow-hidden">
+    <!-- Animated Background Pattern -->
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZjZkMDAiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE0YzAtNiA0LTEwIDEwLTEwczEwIDQgMTAgMTAtNCAxMC0xMCAxMC0xMC00LTEwLTEwek0wIDM0YzAtNiA0LTEwIDEwLTEwczEwIDQgMTAgMTAtNCAxMC0xMCAxMC0xMC00LTEwLTEweiIvPjwvZz48L2c+PC9zdmc+')] opacity-40"></div>
+    
+    <!-- Decorative Elements -->
+    <div class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-orange-400/20 to-pink-400/20 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-40 left-10 w-96 h-96 bg-gradient-to-br from-purple-400/20 to-blue-400/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+    
+    <!-- Back Button -->
+    <div class="bg-white/80 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-20 shadow-sm relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <button 
+          (click)="goBack()"
+          class="inline-flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-orange-500 transition-colors duration-300 font-medium focus:outline-none focus:ring-4 focus:ring-orange-300 rounded-lg cursor-pointer"
+          aria-label="Back to articles"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Back to Articles
+        </button>
+      </div>
+    </div>
+
+    <!-- Two Column Layout -->
+    <div class="flex flex-col lg:flex-row lg:h-[calc(100vh-73px)]">
+      <!-- Left Side - Fixed Image Carousel -->
+      <div class="lg:w-1/2 lg:sticky lg:top-[73px] lg:h-[calc(100vh-73px)] lg:overflow-hidden relative group flex-shrink-0">
+        <!-- Carousel Images -->
+        <div class="relative w-full h-64 lg:h-full overflow-hidden">
+          @for (image of article()!.images; track image; let i = $index) {
+            <img 
+              [src]="image" 
+              [alt]="article()!.title + ' - Image ' + (i + 1)"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+              [class.opacity-100]="currentImageIndex() === i"
+              [class.opacity-0]="currentImageIndex() !== i"
+            >
+          }
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          
+          <!-- Previous Button -->
+          @if (article()!.images.length > 1) {
+            <button 
+              (click)="previousImage()"
+              class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-4 focus:ring-orange-300 cursor-pointer"
+              aria-label="Previous image"
+            >
+              <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            
+            <!-- Next Button -->
+            <button 
+              (click)="nextImage()"
+              class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-4 focus:ring-orange-300 cursor-pointer"
+              aria-label="Next image"
+            >
+              <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          }
+        </div>
+
+        <!-- Title and Category Overlay -->
+        <div class="absolute bottom-0 left-0 right-0 p-8">
+          <span class="inline-block px-4 py-2 bg-white/90 backdrop-blur-sm text-orange-600 text-sm font-semibold rounded-full shadow-md mb-4">
+            {{ article()!.category }}
+          </span>
+          <h1 
+            [id]="'article-title-' + article()!.id"
+            class="text-3xl lg:text-4xl font-bold text-white mb-2"
+          >
+            {{ article()!.title }}
+          </h1>
+          
+          <!-- Carousel Indicators -->
+          @if (article()!.images.length > 1) {
+            <div class="flex gap-2 mt-4">
+              @for (image of article()!.images; track image; let i = $index) {
+                <button
+                  (click)="goToImage(i)"
+                  class="w-2 h-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white cursor-pointer"
+                  [class.bg-white]="currentImageIndex() === i"
+                  [class.w-8]="currentImageIndex() === i"
+                  [class.bg-white/50]="currentImageIndex() !== i"
+                  [attr.aria-label]="'Go to image ' + (i + 1)"
+                ></button>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Right Side - Scrollable Content -->
+      <div class="lg:w-1/2 lg:h-[calc(100vh-73px)] lg:overflow-y-auto relative">
+        <div class="p-6 lg:p-12 min-h-full">
+          <!-- Author Info -->
+          <div class="bg-white rounded-2xl shadow-md p-6 mb-8">
+            <div class="flex items-center space-x-4">
+              <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                {{ getAuthorInitials(article()!.author) }}
+              </div>
+              <div>
+                <p class="text-lg font-semibold text-gray-900">{{ article()!.author }}</p>
+                <div class="flex items-center space-x-3 text-sm text-gray-600">
+                  <span>{{ article()!.date }}</span>
+                  <span>•</span>
+                  <span>{{ article()!.readTime }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article Excerpt/Description -->
+          <div class="bg-white rounded-2xl shadow-md p-8">
+            <div class="prose prose-lg max-w-none">
+              <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                {{ article()!.excerpt }}
+              </p>
+
+              <!-- Full Article Content -->
+              <div class="space-y-6 text-gray-700">
+            <p class="leading-relaxed">
+              This delicious recipe combines traditional techniques with modern flavors to create a truly unforgettable culinary experience. Whether you're a beginner or an experienced cook, you'll find that following these steps will lead to incredible results that will impress your family and friends.
+            </p>
+
+            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">What You'll Need</h2>
+            <p class="leading-relaxed">
+              Before you begin, make sure you have all the necessary ingredients and equipment ready. Quality ingredients make a significant difference in the final result, so choose the freshest produce and best quality items you can find.
+            </p>
+
+            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Preparation Steps</h2>
+            <p class="leading-relaxed">
+              Start by preparing your workspace and gathering all your ingredients. Proper mise en place (everything in its place) is crucial for a smooth cooking experience. Take your time with each step, and don't rush the process – great food requires patience and attention to detail.
+            </p>
+
+            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Cooking Techniques</h2>
+            <p class="leading-relaxed">
+              The key to mastering this recipe lies in understanding the fundamental techniques involved. Pay close attention to temperature control, timing, and the order of operations. These elements work together to create the perfect balance of flavors and textures.
+            </p>
+
+            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Serving Suggestions</h2>
+                <p class="leading-relaxed">
+                  Once your dish is complete, presentation matters. Take a moment to plate your creation beautifully, garnish appropriately, and serve at the right temperature. Your attention to these final details will elevate the entire dining experience.
+                </p>
+
+                <div class="bg-orange-50 border-l-4 border-orange-500 p-6 my-8 rounded-r-lg">
+                  <p class="text-gray-800 italic">
+                    <strong class="text-orange-600">Pro Tip:</strong> This recipe can be adapted to suit various dietary preferences and seasonal ingredient availability. Don't be afraid to experiment and make it your own!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-gray-200">
+              <button class="flex-1 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-xl hover:from-orange-600 hover:to-red-600 transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-orange-300 cursor-pointer">
+                Save Recipe
+              </button>
+              <button class="flex-1 px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-orange-500 hover:text-orange-500 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-orange-300 cursor-pointer">
+                Share
+              </button>
+              <button class="flex-1 px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-orange-500 hover:text-orange-500 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-orange-300 cursor-pointer">
+                Print
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+}
