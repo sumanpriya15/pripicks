@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
 
       - name: Install dependencies
@@ -41,7 +41,7 @@ jobs:
           action: "upload"
           app_location: "/"
           api_location: ""
-          output_location: "dist/pri-picks/browser"
+          output_location: "dist/PriPicks"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
