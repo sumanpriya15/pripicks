@@ -38,4 +38,37 @@ export class FoodBlogComponent {
   openArticle(post: BlogPost) {
     this.router.navigate(['/article', post.id]);
   }
+
+  smoothScrollTo(elementId: string, event: Event) {
+    event.preventDefault();
+    const element = document.getElementById(elementId);
+    const scrollContainer = document.querySelector('.overflow-y-auto') as HTMLElement;
+    
+    if (element && scrollContainer) {
+      const targetPosition = element.offsetTop - 64; // Subtract navbar height (h-16 = 64px)
+      const startPosition = scrollContainer.scrollTop;
+      const distance = targetPosition - startPosition;
+      const duration = 1500; // 1.5 seconds - adjust this for slower/faster scroll
+      let start: number | null = null;
+
+      const animation = (currentTime: number) => {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const progress = Math.min(timeElapsed / duration, 1);
+        
+        // Easing function for smooth animation
+        const easeInOutCubic = progress < 0.5
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        
+        scrollContainer.scrollTop = startPosition + distance * easeInOutCubic;
+        
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      };
+
+      requestAnimationFrame(animation);
+    }
+  }
 }

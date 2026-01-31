@@ -1,0 +1,17 @@
+/* Slower smooth scroll */
+.scroll-smooth {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+/* Override default smooth scroll with slower animation */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-smooth {
+    scroll-behavior: auto;
+  }
+  
+  .scroll-smooth {
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+  }
+}
