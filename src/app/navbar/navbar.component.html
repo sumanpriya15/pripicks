@@ -1,4 +1,4 @@
-<nav class="bg-gradient-to-r from-orange-50 via-pink-50 to-purple-50 shadow-lg border-b-2 border-orange-200">
+﻿<nav class="bg-white/80 backdrop-blur-md shadow-lg border-b-2 border-orange-200 relative z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16">
       <div class="flex">
@@ -9,43 +9,72 @@
         </div>
         <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
           <a routerLink="/" routerLinkActive="border-orange-500 text-orange-600" [routerLinkActiveOptions]="{exact: true}" class="border-transparent text-gray-700 hover:border-orange-300 hover:text-orange-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold transition-colors duration-300">
-            🏠 Home
+             Home
           </a>
           <a routerLink="/food" routerLinkActive="border-orange-500 text-orange-600" class="border-transparent text-gray-700 hover:border-orange-300 hover:text-orange-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold transition-colors duration-300">
-            🍕 Food
+             Food
           </a>
           <a routerLink="/movies" routerLinkActive="border-purple-500 text-purple-600" class="border-transparent text-gray-700 hover:border-purple-300 hover:text-purple-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold transition-colors duration-300">
-            🎬 Movies
+             Movies
           </a>
           <a routerLink="/arts" routerLinkActive="border-pink-500 text-pink-600" class="border-transparent text-gray-700 hover:border-pink-300 hover:text-pink-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold transition-colors duration-300">
-            🎨 Arts
+             Arts
           </a>
           <a routerLink="/travel" routerLinkActive="border-blue-500 text-blue-600" class="border-transparent text-gray-700 hover:border-blue-300 hover:text-blue-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold transition-colors duration-300">
-            ✈️ Travel
+             Travel
           </a>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Mobile menu -->
-  <div class="sm:hidden" id="mobile-menu">
-    <div class="pt-2 pb-3 space-y-1">
-      <a routerLink="/" routerLinkActive="bg-orange-100 border-orange-500 text-orange-700" [routerLinkActiveOptions]="{exact: true}" class="border-transparent text-gray-700 hover:bg-orange-50 hover:border-orange-300 hover:text-orange-600 block pl-3 pr-4 py-2 border-l-4 text-base font-semibold transition-colors duration-300">
-        🏠 Home
-      </a>
-      <a routerLink="/food" routerLinkActive="bg-orange-100 border-orange-500 text-orange-700" class="border-transparent text-gray-700 hover:bg-orange-50 hover:border-orange-300 hover:text-orange-600 block pl-3 pr-4 py-2 border-l-4 text-base font-semibold transition-colors duration-300">
-        🍕 Food
-      </a>
-      <a routerLink="/movies" routerLinkActive="bg-purple-100 border-purple-500 text-purple-700" class="border-transparent text-gray-700 hover:bg-purple-50 hover:border-purple-300 hover:text-purple-600 block pl-3 pr-4 py-2 border-l-4 text-base font-semibold transition-colors duration-300">
-        🎬 Movies
-      </a>
-      <a routerLink="/arts" routerLinkActive="bg-pink-100 border-pink-500 text-pink-700" class="border-transparent text-gray-700 hover:bg-pink-50 hover:border-pink-300 hover:text-pink-600 block pl-3 pr-4 py-2 border-l-4 text-base font-semibold transition-colors duration-300">
-        🎨 Arts
-      </a>
-      <a routerLink="/travel" routerLinkActive="bg-blue-100 border-blue-500 text-blue-700" class="border-transparent text-gray-700 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-600 block pl-3 pr-4 py-2 border-l-4 text-base font-semibold transition-colors duration-300">
-        ✈️ Travel
-      </a>
+      
+      <!-- Mobile menu button -->
+      <div class="flex items-center sm:hidden">
+        <button
+          (click)="toggleMobileMenu()"
+          class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-orange-500 hover:bg-orange-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500 transition-colors duration-300"
+          aria-label="Toggle menu"
+        >
+          @if (!mobileMenuOpen()) {
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          } @else {
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          }
+        </button>
+      </div>
     </div>
   </div>
 </nav>
+
+<!-- Mobile menu overlay -->
+@if (mobileMenuOpen()) {
+  <div 
+    class="fixed inset-0 bg-black/30 z-40 sm:hidden"
+    (click)="toggleMobileMenu()"
+  ></div>
+}
+
+<!-- Mobile menu dropdown -->
+@if (mobileMenuOpen()) {
+  <div class="fixed top-16 left-0 right-0 bg-white/95 backdrop-blur-md shadow-xl z-50 sm:hidden" id="mobile-menu">
+    <div class="py-3 space-y-1">
+      <a routerLink="/" (click)="toggleMobileMenu()" routerLinkActive="bg-orange-100 border-orange-500 text-orange-700" [routerLinkActiveOptions]="{exact: true}" class="border-transparent text-gray-700 hover:bg-orange-50 hover:border-orange-300 hover:text-orange-600 block pl-4 pr-4 py-3 border-l-4 text-base font-semibold transition-colors duration-300">
+         Home
+      </a>
+      <a routerLink="/food" (click)="toggleMobileMenu()" routerLinkActive="bg-orange-100 border-orange-500 text-orange-700" class="border-transparent text-gray-700 hover:bg-orange-50 hover:border-orange-300 hover:text-orange-600 block pl-4 pr-4 py-3 border-l-4 text-base font-semibold transition-colors duration-300">
+         Food
+      </a>
+      <a routerLink="/movies" (click)="toggleMobileMenu()" routerLinkActive="bg-purple-100 border-purple-500 text-purple-700" class="border-transparent text-gray-700 hover:bg-purple-50 hover:border-purple-300 hover:text-purple-600 block pl-4 pr-4 py-3 border-l-4 text-base font-semibold transition-colors duration-300">
+         Movies
+      </a>
+      <a routerLink="/arts" (click)="toggleMobileMenu()" routerLinkActive="bg-pink-100 border-pink-500 text-pink-700" class="border-transparent text-gray-700 hover:bg-pink-50 hover:border-pink-300 hover:text-pink-600 block pl-4 pr-4 py-3 border-l-4 text-base font-semibold transition-colors duration-300">
+         Arts
+      </a>
+      <a routerLink="/travel" (click)="toggleMobileMenu()" routerLinkActive="bg-blue-100 border-blue-500 text-blue-700" class="border-transparent text-gray-700 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-600 block pl-4 pr-4 py-3 border-l-4 text-base font-semibold transition-colors duration-300">
+         Travel
+      </a>
+    </div>
+  </div>
+}
