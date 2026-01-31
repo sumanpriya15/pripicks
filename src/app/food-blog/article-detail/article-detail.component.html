@@ -1,27 +1,11 @@
 @if (article()) {
-  <div class="min-h-screen bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 relative overflow-hidden">
+  <div class="bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 relative overflow-hidden">
     <!-- Animated Background Pattern -->
     <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZjZkMDAiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE0YzAtNiA0LTEwIDEwLTEwczEwIDQgMTAgMTAtNCAxMC0xMCAxMC0xMC00LTEwLTEwek0wIDM0YzAtNiA0LTEwIDEwLTEwczEwIDQgMTAgMTAtNCAxMC0xMCAxMC0xMC00LTEwLTEweiIvPjwvZz48L2c+PC9zdmc+')] opacity-40"></div>
     
     <!-- Decorative Elements -->
     <div class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-orange-400/20 to-pink-400/20 rounded-full blur-3xl animate-float"></div>
     <div class="absolute bottom-40 left-10 w-96 h-96 bg-gradient-to-br from-purple-400/20 to-blue-400/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
-    
-    <!-- Back Button -->
-    <div class="bg-white/80 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-20 shadow-sm relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <button 
-          (click)="goBack()"
-          class="inline-flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-orange-500 transition-colors duration-300 font-medium focus:outline-none focus:ring-4 focus:ring-orange-300 rounded-lg cursor-pointer"
-          aria-label="Back to articles"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-          </svg>
-          Back to Articles
-        </button>
-      </div>
-    </div>
 
     <!-- Two Column Layout -->
     <div class="flex flex-col lg:flex-row lg:h-[calc(100vh-73px)]">
