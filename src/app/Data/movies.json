@@ -1,0 +1,86 @@
+[
+  {
+    "id": 101,
+    "title": "Cinematic Masterpiece",
+    "excerpt": "A breathtaking visual journey that redefines modern cinema.",
+    "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&h=600&fit=crop"
+    ],
+    "author": "Alex Martinez",
+    "date": "January 30, 2026",
+    "category": "Reviews",
+    "readTime": "7 min read"
+  },
+  {
+    "id": 102,
+    "title": "Hidden Gem Alert",
+    "excerpt": "An indie film that deserves more recognition and acclaim.",
+    "image": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=600&fit=crop"
+    ],
+    "author": "Jordan Lee",
+    "date": "January 28, 2026",
+    "category": "Indie Films",
+    "readTime": "5 min read"
+  },
+  {
+    "id": 103,
+    "title": "Classic Revisited",
+    "excerpt": "Rediscovering the timeless magic of a beloved classic.",
+    "image": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=800&h=600&fit=crop"
+    ],
+    "author": "Taylor Swift",
+    "date": "January 26, 2026",
+    "category": "Classics",
+    "readTime": "6 min read"
+  },
+  {
+    "id": 104,
+    "title": "Director's Vision",
+    "excerpt": "Behind the camera with visionary filmmakers shaping cinema today.",
+    "image": "https://images.unsplash.com/photo-1574267432644-f6b8c0e2e5ed?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1574267432644-f6b8c0e2e5ed?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1512070679279-8988d32161be?w=800&h=600&fit=crop"
+    ],
+    "author": "Chris Anderson",
+    "date": "January 24, 2026",
+    "category": "Filmmaking",
+    "readTime": "9 min read"
+  },
+  {
+    "id": 105,
+    "title": "Box Office Breakdown",
+    "excerpt": "Analyzing the trends and surprises in this year's cinema landscape.",
+    "image": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&h=600&fit=crop"
+    ],
+    "author": "Morgan Davis",
+    "date": "January 22, 2026",
+    "category": "Industry",
+    "readTime": "8 min read"
+  },
+  {
+    "id": 106,
+    "title": "Streaming Wars Update",
+    "excerpt": "The latest releases and what's worth your time on streaming platforms.",
+    "image": "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?w=800&h=600&fit=crop"
+    ],
+    "author": "Riley Parker",
+    "date": "January 20, 2026",
+    "category": "Streaming",
+    "readTime": "6 min read"
+  }
+]

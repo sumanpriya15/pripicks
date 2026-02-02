@@ -1,0 +1,86 @@
+[
+  {
+    "id": 401,
+    "title": "Glow Recipe",
+    "excerpt": "Natural ingredients for radiant, healthy skin every morning.",
+    "image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop"
+    ],
+    "author": "Emma Chen",
+    "date": "February 1, 2026",
+    "category": "Routine",
+    "readTime": "6 min read"
+  },
+  {
+    "id": 402,
+    "title": "Hydration Essential",
+    "excerpt": "The science behind keeping your skin plump and moisturized.",
+    "image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&h=600&fit=crop"
+    ],
+    "author": "Sophia Kim",
+    "date": "January 30, 2026",
+    "category": "Hydration",
+    "readTime": "7 min read"
+  },
+  {
+    "id": 403,
+    "title": "Clean Beauty Guide",
+    "excerpt": "Choosing non-toxic, sustainable products for mindful skincare.",
+    "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800&h=600&fit=crop"
+    ],
+    "author": "Maya Patel",
+    "date": "January 28, 2026",
+    "category": "Clean Beauty",
+    "readTime": "8 min read"
+  },
+  {
+    "id": 404,
+    "title": "Anti-Aging Secrets",
+    "excerpt": "Proven techniques and ingredients to maintain youthful skin.",
+    "image": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&h=600&fit=crop"
+    ],
+    "author": "Isabella Rose",
+    "date": "January 26, 2026",
+    "category": "Anti-Aging",
+    "readTime": "9 min read"
+  },
+  {
+    "id": 405,
+    "title": "Morning Rituals",
+    "excerpt": "Start your day with a refreshing skincare routine that works.",
+    "image": "https://images.unsplash.com/photo-1552693673-1bf958298935?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1552693673-1bf958298935?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800&h=600&fit=crop"
+    ],
+    "author": "Lily Zhang",
+    "date": "January 24, 2026",
+    "category": "Routine",
+    "readTime": "5 min read"
+  },
+  {
+    "id": 406,
+    "title": "Serums Decoded",
+    "excerpt": "Understanding active ingredients and how to layer them properly.",
+    "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&h=600&fit=crop"
+    ],
+    "author": "Grace Williams",
+    "date": "January 22, 2026",
+    "category": "Products",
+    "readTime": "10 min read"
+  }
+]

@@ -1,4 +1,5 @@
-import { Component, signal, computed, ChangeDetectionStrategy, OnInit, OnDestroy } from '@angular/core';
+import { Component, signal, computed, ChangeDetectionStrategy, OnInit, OnDestroy, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 export interface Movie {
   id: number;
@@ -25,6 +26,7 @@ export interface MovieCategory {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MoviesComponent implements OnInit, OnDestroy {
+  private router = inject(Router);
   private autoPlayInterval: ReturnType<typeof setInterval> | null = null;
 
   // Hero carousel movies
@@ -221,5 +223,9 @@ export class MoviesComponent implements OnInit, OnDestroy {
 
   trackByCategoryName(index: number, category: MovieCategory): string {
     return category.name;
+  }
+
+  openMovieDetail(movie: Movie) {
+    this.router.navigate(['/movies', movie.id]);
   }
 }

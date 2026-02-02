@@ -14,12 +14,20 @@ export const routes: Routes = [
     loadComponent: () => import('./movies/movies.component').then(m => m.MoviesComponent)
   },
   {
+    path: 'movies/:id',
+    loadComponent: () => import('./movies/movie-detail/movie-detail.component').then(m => m.MovieDetailComponent)
+  },
+  {
     path: 'arts',
     loadComponent: () => import('./arts/arts.component').then(m => m.ArtsComponent)
   },
   {
     path: 'travel',
     loadComponent: () => import('./travel/travel.component').then(m => m.TravelComponent)
+  },
+  {
+    path: 'skincare',
+    loadComponent: () => import('./skincare/skincare.component').then(m => m.SkincareComponent)
   },
   {
     path: 'article/:id',

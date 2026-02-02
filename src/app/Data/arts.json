@@ -1,0 +1,86 @@
+[
+  {
+    "id": 301,
+    "title": "Modern Art Trends",
+    "excerpt": "Contemporary art movements shaping today's creative landscape.",
+    "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=600&fit=crop"
+    ],
+    "author": "Emma Watson",
+    "date": "January 30, 2026",
+    "category": "Contemporary",
+    "readTime": "6 min read"
+  },
+  {
+    "id": 302,
+    "title": "Gallery Spotlight",
+    "excerpt": "Featured exhibitions and emerging artists to watch this season.",
+    "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?w=800&h=600&fit=crop"
+    ],
+    "author": "Lucas Brown",
+    "date": "January 28, 2026",
+    "category": "Exhibitions",
+    "readTime": "8 min read"
+  },
+  {
+    "id": 303,
+    "title": "Creative Process",
+    "excerpt": "Behind the scenes with artists and their creative journeys.",
+    "image": "https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&h=600&fit=crop"
+    ],
+    "author": "Sophia Taylor",
+    "date": "January 26, 2026",
+    "category": "Artists",
+    "readTime": "7 min read"
+  },
+  {
+    "id": 304,
+    "title": "Street Art Revolution",
+    "excerpt": "Urban art transforms cities into open-air galleries worldwide.",
+    "image": "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1533158326339-7f3cf2404354?w=800&h=600&fit=crop"
+    ],
+    "author": "Marcus Johnson",
+    "date": "January 24, 2026",
+    "category": "Street Art",
+    "readTime": "5 min read"
+  },
+  {
+    "id": 305,
+    "title": "Digital Art Era",
+    "excerpt": "How technology is reshaping artistic expression and creativity.",
+    "image": "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=800&h=600&fit=crop"
+    ],
+    "author": "Olivia Martinez",
+    "date": "January 22, 2026",
+    "category": "Digital Art",
+    "readTime": "9 min read"
+  },
+  {
+    "id": 306,
+    "title": "Art History Reimagined",
+    "excerpt": "Classic masterpieces through a modern lens and interpretation.",
+    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=600&fit=crop"
+    ],
+    "author": "Benjamin Clark",
+    "date": "January 20, 2026",
+    "category": "History",
+    "readTime": "10 min read"
+  }
+]

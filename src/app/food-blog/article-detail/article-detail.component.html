@@ -82,20 +82,15 @@
       <!-- Right Side - Scrollable Content -->
       <div class="lg:w-1/2 lg:h-[calc(100vh-73px)] lg:overflow-y-auto relative">
         <div class="p-6 lg:p-12 min-h-full">
-          <!-- Author Info -->
-          <div class="bg-white rounded-2xl shadow-md p-6 mb-8">
-            <div class="flex items-center space-x-4">
-              <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                {{ getAuthorInitials(article()!.author) }}
-              </div>
-              <div>
-                <p class="text-lg font-semibold text-gray-900">{{ article()!.author }}</p>
-                <div class="flex items-center space-x-3 text-sm text-gray-600">
-                  <span>{{ article()!.date }}</span>
-                  <span>•</span>
-                  <span>{{ article()!.readTime }}</span>
-                </div>
-              </div>
+          <!-- Recipe Info -->
+          <div class="bg-gradient-to-r from-orange-50 to-pink-50 rounded-2xl shadow-md p-6 mb-8 border-l-4 border-orange-500">
+            <div class="flex items-center space-x-3 text-orange-700">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-lg font-semibold">{{ article()!.readTime }}</span>
+              <span class="text-gray-400">•</span>
+              <span class="text-base">Made with 🧡 in my kitchen</span>
             </div>
           </div>
 
@@ -106,35 +101,93 @@
                 {{ article()!.excerpt }}
               </p>
 
+              <!-- Recipe Summary Card -->
+              @if (article()!.servings || article()!.prepTime) {
+                <div class="bg-gradient-to-r from-orange-50 to-pink-50 rounded-xl p-6 mb-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+                  @if (article()!.servings) {
+                    <div class="text-center">
+                      <div class="text-3xl mb-1">👥</div>
+                      <div class="text-sm text-gray-600">Servings</div>
+                      <div class="font-bold text-gray-900">{{ article()!.servings }}</div>
+                    </div>
+                  }
+                  @if (article()!.prepTime) {
+                    <div class="text-center">
+                      <div class="text-3xl mb-1">⏱️</div>
+                      <div class="text-sm text-gray-600">Prep Time</div>
+                      <div class="font-bold text-gray-900">{{ article()!.prepTime }}</div>
+                    </div>
+                  }
+                  <div class="text-center">
+                    <div class="text-3xl mb-1">🍳</div>
+                    <div class="text-sm text-gray-600">Cook Time</div>
+                    <div class="font-bold text-gray-900">{{ article()!.readTime }}</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-3xl mb-1">⚡</div>
+                    <div class="text-sm text-gray-600">Difficulty</div>
+                    <div class="font-bold text-gray-900">Easy</div>
+                  </div>
+                </div>
+              }
+
               <!-- Full Article Content -->
               <div class="space-y-6 text-gray-700">
             <p class="leading-relaxed">
-              This delicious recipe combines traditional techniques with modern flavors to create a truly unforgettable culinary experience. Whether you're a beginner or an experienced cook, you'll find that following these steps will lead to incredible results that will impress your family and friends.
+              This is one of my absolute favorite recipes to make at home! It's become a staple in my kitchen because it's so simple yet incredibly delicious. I love how it brings everyone to the table with those amazing aromas.
             </p>
 
-            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">What You'll Need</h2>
-            <p class="leading-relaxed">
-              Before you begin, make sure you have all the necessary ingredients and equipment ready. Quality ingredients make a significant difference in the final result, so choose the freshest produce and best quality items you can find.
-            </p>
+            @if (article()?.ingredients?.length) {
+              <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">🥘 Ingredients</h2>
+              <div class="bg-gray-50 rounded-xl p-6">
+                <ul class="space-y-2">
+                  @for (ingredient of article()!.ingredients; track ingredient) {
+                    <li class="flex items-start gap-3">
+                      <span class="text-orange-500 mt-1">✓</span>
+                      <span class="leading-relaxed">{{ ingredient }}</span>
+                    </li>
+                  }
+                </ul>
+                <p class="mt-4 text-sm text-gray-600 italic">
+                  💡 All measurements are approximate — feel free to adjust to your taste!
+                </p>
+              </div>
+            }
 
-            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Preparation Steps</h2>
-            <p class="leading-relaxed">
-              Start by preparing your workspace and gathering all your ingredients. Proper mise en place (everything in its place) is crucial for a smooth cooking experience. Take your time with each step, and don't rush the process – great food requires patience and attention to detail.
-            </p>
+            @if (article()?.steps?.length) {
+              <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">👩‍🍳 Step-by-Step Instructions</h2>
+              <div class="space-y-4">
+                @for (step of article()!.steps; track step; let i = $index) {
+                  <div class="flex gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">{{ i + 1 }}</span>
+                    <p class="leading-relaxed pt-1">{{ step }}</p>
+                  </div>
+                }
+              </div>
+            }
 
-            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Cooking Techniques</h2>
-            <p class="leading-relaxed">
-              The key to mastering this recipe lies in understanding the fundamental techniques involved. Pay close attention to temperature control, timing, and the order of operations. These elements work together to create the perfect balance of flavors and textures.
-            </p>
+            @if (article()?.tips?.length) {
+              <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">✨ My Kitchen Secrets</h2>
+              <div class="bg-orange-50 rounded-xl p-6 space-y-3">
+                @for (tip of article()!.tips; track tip; let i = $index) {
+                  <p class="leading-relaxed">
+                    <strong class="text-orange-600">Tip {{ i + 1 }}:</strong> {{ tip }}
+                  </p>
+                }
+              </div>
+            }
 
-            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Serving Suggestions</h2>
+            <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">🍽️ Serving Suggestions</h2>
                 <p class="leading-relaxed">
-                  Once your dish is complete, presentation matters. Take a moment to plate your creation beautifully, garnish appropriately, and serve at the right temperature. Your attention to these final details will elevate the entire dining experience.
+                  I love serving this warm, straight from the stove to the table. It pairs beautifully with rice, naan, or roti. My family always requests this for weekend dinners, and leftovers (if there are any!) taste even better the next day as the flavors meld together.
                 </p>
 
-                <div class="bg-orange-50 border-l-4 border-orange-500 p-6 my-8 rounded-r-lg">
-                  <p class="text-gray-800 italic">
-                    <strong class="text-orange-600">Pro Tip:</strong> This recipe can be adapted to suit various dietary preferences and seasonal ingredient availability. Don't be afraid to experiment and make it your own!
+                <div class="bg-gradient-to-r from-orange-50 to-pink-50 border-l-4 border-orange-500 p-6 my-8 rounded-r-lg">
+                  <p class="text-gray-800">
+                    <strong class="text-orange-600">💬 From My Kitchen to Yours:</strong>
+                  </p>
+                  <p class="text-gray-700 mt-2 leading-relaxed">
+                    Remember, cooking is about love and creativity! Feel free to adjust spices and ingredients to your taste. That's the beauty of home cooking — you make it your own. If you try this recipe, I'd love to hear how it turned out! 🧡
                   </p>
                 </div>
               </div>
@@ -143,13 +196,13 @@
             <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-gray-200">
               <button class="flex-1 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-xl hover:from-orange-600 hover:to-red-600 transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-orange-300 cursor-pointer">
-                Save Recipe
+                💖 Save This Recipe
               </button>
               <button class="flex-1 px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-orange-500 hover:text-orange-500 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-orange-300 cursor-pointer">
-                Share
+                📤 Share with Friends
               </button>
               <button class="flex-1 px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-orange-500 hover:text-orange-500 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-orange-300 cursor-pointer">
-                Print
+                📝 Print Recipe
               </button>
             </div>
           </div>

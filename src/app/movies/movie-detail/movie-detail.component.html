@@ -1,0 +1,193 @@
+<!-- Movie Detail Page - Dark Cinematic Theme -->
+<div class="min-h-screen bg-[#141414]">
+  
+  @if (movie(); as movieData) {
+    <!-- Large Poster Banner -->
+    <section class="relative h-[70vh] overflow-hidden">
+      <img 
+        [src]="movieData.posterBanner" 
+        [alt]="movieData.title"
+        class="w-full h-full object-cover"
+      >
+      <!-- Gradient Overlays -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#141414] via-[#141414]/80 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent"></div>
+      
+      <!-- Back Button -->
+      <button 
+        (click)="goBack()"
+        class="absolute top-6 left-6 w-12 h-12 bg-black/70 text-white rounded-full flex items-center justify-center hover:bg-black/90 transition-all duration-300 z-20 focus:outline-none focus:ring-2 focus:ring-white backdrop-blur-sm"
+        aria-label="Go back"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+
+      <!-- Movie Title & Basic Info Overlay -->
+      <div class="absolute bottom-0 left-0 right-0 pb-12 px-6 sm:px-12 lg:px-16 z-10">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight animate-slide-up">
+            {{ movieData.title }}
+          </h1>
+          
+          <div class="flex flex-wrap items-center gap-4 mb-4 animate-slide-up" style="animation-delay: 0.1s;">
+            <span class="px-3 py-1 bg-red-600 text-white text-sm font-bold rounded">{{ movieData.year }}</span>
+            <span class="text-gray-300 text-sm">{{ movieData.duration }}</span>
+            <span class="text-gray-300 text-sm">{{ movieData.maturityRating }}</span>
+            
+            <!-- My Rating -->
+            <div class="flex items-center gap-2 px-3 py-1 bg-yellow-500/20 rounded backdrop-blur-sm border border-yellow-500/50">
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <span class="text-yellow-400 font-bold">{{ movieData.myRating }}/10</span>
+              <span class="text-yellow-400/70 text-xs">MY RATING</span>
+            </div>
+          </div>
+
+          <!-- Genres -->
+          <div class="flex flex-wrap gap-2 animate-slide-up" style="animation-delay: 0.2s;">
+            @for (genre of movieData.genre; track genre) {
+              <span class="px-4 py-1.5 bg-white/10 text-gray-300 text-sm font-medium rounded-full backdrop-blur-sm border border-white/20">
+                {{ genre }}
+              </span>
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <main class="px-6 sm:px-12 lg:px-16 py-12 max-w-7xl mx-auto">
+      
+      <!-- Synopsis -->
+      <section class="mb-16 animate-fade-in">
+        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="w-1 h-8 bg-red-600 rounded"></span>
+          Synopsis
+        </h2>
+        <p class="text-gray-300 text-lg leading-relaxed">
+          {{ movieData.synopsis }}
+        </p>
+      </section>
+
+      <div class="grid lg:grid-cols-3 gap-12">
+        <!-- Left Column: Cast & Why Watch -->
+        <div class="lg:col-span-2 space-y-16">
+          
+          <!-- Cast Highlights -->
+          <section class="animate-fade-in" style="animation-delay: 0.1s;">
+            <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <span class="w-1 h-8 bg-red-600 rounded"></span>
+              Cast Highlights
+            </h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+              @for (member of movieData.cast; track member.name) {
+                <div class="bg-[#1f1f1f] rounded-xl p-6 hover:bg-[#2a2a2a] transition-all duration-300 border border-white/5 hover:border-white/20">
+                  <h3 class="text-white font-bold text-lg mb-1">{{ member.name }}</h3>
+                  <p class="text-gray-400 text-sm">as {{ member.role }}</p>
+                </div>
+              }
+            </div>
+          </section>
+
+          <!-- Why You Should Watch -->
+          <section class="animate-fade-in" style="animation-delay: 0.2s;">
+            <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <span class="w-1 h-8 bg-red-600 rounded"></span>
+              Why You Should Watch
+            </h2>
+            <div class="space-y-4">
+              @for (reason of movieData.whyWatch; track reason; let i = $index) {
+                <div class="flex gap-4 items-start group">
+                  <div class="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold group-hover:scale-110 transition-transform duration-300">
+                    {{ i + 1 }}
+                  </div>
+                  <p class="text-gray-300 text-lg leading-relaxed pt-0.5">{{ reason }}</p>
+                </div>
+              }
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Column: Ratings & Availability -->
+        <div class="space-y-8">
+          
+          <!-- IMDb Rating -->
+          <section class="bg-[#1f1f1f] rounded-xl p-6 border border-white/5 animate-fade-in" style="animation-delay: 0.3s;">
+            <h3 class="text-white font-bold text-lg mb-4">IMDb Rating</h3>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="flex gap-1">
+                @for (star of getStarRating(movieData.rating); track $index) {
+                  <svg class="w-6 h-6" [class]="star === 'full' ? 'text-yellow-400' : star === 'half' ? 'text-yellow-400' : 'text-gray-600'" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                }
+              </div>
+            </div>
+            <p class="text-4xl font-bold text-white">{{ movieData.rating }}<span class="text-gray-400 text-lg">/10</span></p>
+          </section>
+
+          <!-- Where to Watch -->
+          <section class="bg-[#1f1f1f] rounded-xl p-6 border border-white/5 animate-fade-in" style="animation-delay: 0.4s;">
+            <h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Where to Watch
+            </h3>
+            <div class="space-y-3">
+              @for (platform of movieData.availableOn; track platform.platform) {
+                <a 
+                  [href]="platform.link" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block bg-[#2a2a2a] hover:bg-[#353535] rounded-lg p-4 transition-all duration-300 border border-white/10 hover:border-red-600/50 group"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="text-white font-semibold group-hover:text-red-500 transition-colors">{{ platform.platform }}</span>
+                    <svg class="w-5 h-5 text-gray-400 group-hover:text-red-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                  </div>
+                </a>
+              }
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Similar Movies Section -->
+      <section class="mt-16 animate-fade-in" style="animation-delay: 0.5s;">
+        <h2 class="text-3xl font-bold text-white mb-8 flex items-center gap-3">
+          <span class="w-1 h-8 bg-red-600 rounded"></span>
+          You Might Also Like
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Placeholder for similar movies - would be populated with actual data -->
+          @for (id of movieData.similarMovies; track id) {
+            <div class="bg-[#1f1f1f] rounded-xl overflow-hidden hover:ring-2 hover:ring-red-600 transition-all duration-300 transform hover:scale-105 cursor-pointer border border-white/5">
+              <div class="aspect-[2/3] bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+                <span class="text-gray-500 text-sm">Similar Movie {{ id }}</span>
+              </div>
+            </div>
+          }
+        </div>
+      </section>
+
+    </main>
+  }
+
+  @else {
+    <!-- Loading State -->
+    <div class="min-h-screen flex items-center justify-center">
+      <div class="text-center">
+        <div class="w-16 h-16 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+        <p class="text-gray-400 text-lg">Loading movie details...</p>
+      </div>
+    </div>
+  }
+  
+</div>

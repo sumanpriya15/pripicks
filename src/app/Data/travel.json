@@ -1,0 +1,86 @@
+[
+  {
+    "id": 201,
+    "title": "Goa Beaches",
+    "excerpt": "Sun, sand, and sea - discover India's favorite beach paradise.",
+    "image": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop"
+    ],
+    "author": "Rahul Mehta",
+    "date": "January 30, 2026",
+    "category": "Beach",
+    "readTime": "7 min read"
+  },
+  {
+    "id": 202,
+    "title": "Jaipur Heritage",
+    "excerpt": "Explore the Pink City's majestic forts and royal palaces.",
+    "image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1604999333679-b86d54738315?w=800&h=600&fit=crop"
+    ],
+    "author": "Ananya Singh",
+    "date": "January 28, 2026",
+    "category": "Heritage",
+    "readTime": "8 min read"
+  },
+  {
+    "id": 203,
+    "title": "Kerala Backwaters",
+    "excerpt": "Serene houseboat journeys through God's Own Country.",
+    "image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop"
+    ],
+    "author": "Vikram Nair",
+    "date": "January 26, 2026",
+    "category": "Nature",
+    "readTime": "6 min read"
+  },
+  {
+    "id": 204,
+    "title": "Manali Adventures",
+    "excerpt": "Snow-capped peaks and thrilling mountain experiences await.",
+    "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop"
+    ],
+    "author": "Neha Kapoor",
+    "date": "January 24, 2026",
+    "category": "Adventure",
+    "readTime": "9 min read"
+  },
+  {
+    "id": 205,
+    "title": "Andaman Islands",
+    "excerpt": "Crystal clear waters and pristine beaches of tropical paradise.",
+    "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&h=600&fit=crop"
+    ],
+    "author": "Arjun Reddy",
+    "date": "January 22, 2026",
+    "category": "Islands",
+    "readTime": "10 min read"
+  },
+  {
+    "id": 206,
+    "title": "Udaipur Romance",
+    "excerpt": "The City of Lakes offers royal luxury and timeless beauty.",
+    "image": "https://images.unsplash.com/photo-1604999333679-b86d54738315?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1604999333679-b86d54738315?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&h=600&fit=crop"
+    ],
+    "author": "Priya Desai",
+    "date": "January 20, 2026",
+    "category": "Luxury",
+    "readTime": "7 min read"
+  }
+]

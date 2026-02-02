@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import artsData from '../Data/arts.json';
+import skincareData from '../Data/skincare.json';
 
-interface ArtsPost {
+interface SkincarePost {
   id: number;
   title: string;
   excerpt: string;
@@ -15,11 +15,11 @@ interface ArtsPost {
 }
 
 @Component({
-  selector: 'app-arts',
+  selector: 'app-skincare',
   imports: [CommonModule, RouterLink],
-  templateUrl: './arts.component.html',
-  styleUrl: './arts.component.css'
+  templateUrl: './skincare.component.html',
+  styleUrl: './skincare.component.css'
 })
-export class ArtsComponent {
-  artsPosts = signal<ArtsPost[]>(artsData);
+export class SkincareComponent {
+  posts = signal<SkincarePost[]>(skincareData);
 }

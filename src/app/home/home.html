@@ -1,1 +1,134 @@
-<app-food-blog></app-food-blog>
+<div class="homepage">
+  <!-- Hero Banner -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">PriPicks</h1>
+      <p class="hero-subtitle">Your curated guide to food, movies, travel, arts, and skincare</p>
+      <p class="hero-description">Discover stories, reviews, and inspiration across multiple passions</p>
+    </div>
+  </section>
+
+  <!-- Category Overview -->
+  <section class="category-overview">
+    <div class="category-container">
+      @for (category of categories(); track category.name) {
+        <a [routerLink]="category.route" class="category-card" [style.border-color]="category.color">
+          <div class="category-icon">{{ category.icon }}</div>
+          <h3 class="category-name">{{ category.name }}</h3>
+          <p class="category-description">{{ category.description }}</p>
+        </a>
+      }
+    </div>
+  </section>
+
+  <!-- Food Preview Section -->
+  <section class="preview-section">
+    <div class="section-header">
+      <h2 class="section-title">Food</h2>
+      <a routerLink="/food" class="view-all-btn">View All →</a>
+    </div>
+    <div class="preview-grid">
+      @for (post of foodPosts(); track post.id) {
+        <article class="preview-card" [routerLink]="['/article', post.id]">
+          <div class="preview-image-wrapper">
+            <img [src]="post.image" [alt]="post.title" class="preview-image" loading="lazy">
+          </div>
+          <div class="preview-content">
+            <span class="preview-category">{{ post.category }}</span>
+            <h3 class="preview-title">{{ post.title }}</h3>
+            <p class="preview-excerpt">{{ post.excerpt }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- Movies Preview Section -->
+  <section class="preview-section">
+    <div class="section-header">
+      <h2 class="section-title">Movies</h2>
+      <a routerLink="/movies" class="view-all-btn">View All →</a>
+    </div>
+    <div class="preview-grid">
+      @for (post of moviePosts(); track post.id) {
+        <article class="preview-card" [routerLink]="['/article', post.id]">
+          <div class="preview-image-wrapper">
+            <img [src]="post.image" [alt]="post.title" class="preview-image" loading="lazy">
+          </div>
+          <div class="preview-content">
+            <span class="preview-category">{{ post.category }}</span>
+            <h3 class="preview-title">{{ post.title }}</h3>
+            <p class="preview-excerpt">{{ post.excerpt }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- Travel Preview Section -->
+  <section class="preview-section">
+    <div class="section-header">
+      <h2 class="section-title">Travel</h2>
+      <a routerLink="/travel" class="view-all-btn">View All →</a>
+    </div>
+    <div class="preview-grid">
+      @for (post of travelPosts(); track post.id) {
+        <article class="preview-card" [routerLink]="['/article', post.id]">
+          <div class="preview-image-wrapper">
+            <img [src]="post.image" [alt]="post.title" class="preview-image" loading="lazy">
+          </div>
+          <div class="preview-content">
+            <span class="preview-category">{{ post.category }}</span>
+            <h3 class="preview-title">{{ post.title }}</h3>
+            <p class="preview-excerpt">{{ post.excerpt }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- Arts Preview Section -->
+  <section class="preview-section">
+    <div class="section-header">
+      <h2 class="section-title">Arts</h2>
+      <a routerLink="/arts" class="view-all-btn">View All →</a>
+    </div>
+    <div class="preview-grid">
+      @for (post of artsPosts(); track post.id) {
+        <article class="preview-card" [routerLink]="['/article', post.id]">
+          <div class="preview-image-wrapper">
+            <img [src]="post.image" [alt]="post.title" class="preview-image" loading="lazy">
+          </div>
+          <div class="preview-content">
+            <span class="preview-category">{{ post.category }}</span>
+            <h3 class="preview-title">{{ post.title }}</h3>
+            <p class="preview-excerpt">{{ post.excerpt }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- Skincare Preview Section -->
+  <section class="preview-section">
+    <div class="section-header">
+      <h2 class="section-title">Skincare</h2>
+      <a routerLink="/skincare" class="view-all-btn">View All →</a>
+    </div>
+    <div class="preview-grid">
+      @for (post of skincarePosts(); track post.id) {
+        <article class="preview-card" [routerLink]="['/article', post.id]">
+          <div class="preview-image-wrapper">
+            <img [src]="post.image" [alt]="post.title" class="preview-image" loading="lazy">
+          </div>
+          <div class="preview-content">
+            <span class="preview-category">{{ post.category }}</span>
+            <h3 class="preview-title">{{ post.title }}</h3>
+            <p class="preview-excerpt">{{ post.excerpt }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+</div>

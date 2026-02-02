@@ -1,16 +1,169 @@
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-  <h1 class="text-4xl font-bold text-gray-900 mb-8">Travel</h1>
-  
-  <div class="bg-white rounded-lg shadow-md p-6">
-    <p class="text-gray-600 text-lg">
-      Journey through amazing destinations around the world. Find travel tips, hidden gems, and unforgettable experiences.
-    </p>
-    
-    <div class="mt-8">
-      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Coming Soon</h2>
-      <p class="text-gray-600">
-        Travel guides and destination reviews will be added here.
-      </p>
+<div class="travel-page">
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="hero-banner-overlay"></div>
+    <div class="hero-banner-content">
+      <h1 class="hero-banner-title">{{ heroBanner().title }}</h1>
+      <p class="hero-banner-subtitle">{{ heroBanner().subtitle }}</p>
+      <p class="hero-banner-description">{{ heroBanner().description }}</p>
     </div>
-  </div>
+  </section>
+
+  <!-- Top 10 Destinations Grid -->
+  <section class="destinations-section">
+    <div class="section-header">
+      <h2 class="section-title">Top 10 Destinations</h2>
+      <p class="section-subtitle">Handpicked places you must visit</p>
+    </div>
+
+    <div class="destinations-grid">
+      @for (destination of topDestinations(); track destination.id) {
+        <article class="destination-card">
+          <div class="destination-image-container">
+            <img 
+              [src]="destination.imageUrl" 
+              [alt]="destination.title" 
+              class="destination-image"
+              loading="lazy">
+            <div class="destination-overlay">
+              <span class="destination-rank">#{{ destination.id }}</span>
+            </div>
+          </div>
+          <div class="destination-info">
+            <span class="destination-location">
+              <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </svg>
+              {{ destination.location }}
+            </span>
+            <h3 class="destination-title">{{ destination.title }}</h3>
+            <p class="destination-description">{{ destination.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- Beach Places Collage -->
+  <section class="collage-section beach-collage">
+    <div class="collage-header">
+      <h2 class="collage-title">Beach Places</h2>
+      <p class="collage-subtitle">Tropical paradise and coastal beauty</p>
+    </div>
+
+    <div class="collage-grid">
+      @for (beach of beachPlaces(); track beach.title) {
+        <article class="collage-item" [class]="'collage-item-' + beach.size">
+          <div class="collage-image-wrapper">
+            <img 
+              [src]="beach.imageUrl" 
+              [alt]="beach.title" 
+              class="collage-image"
+              loading="lazy">
+            <div class="collage-overlay"></div>
+            <div class="collage-text">
+              <span class="collage-subtitle-text">{{ beach.subtitle }}</span>
+              <h3 class="collage-item-title">{{ beach.title }}</h3>
+              <p class="collage-item-description">{{ beach.description }}</p>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- Royal Places Collage -->
+  <section class="collage-section royal-collage">
+    <div class="collage-header">
+      <h2 class="collage-title">Royal Places</h2>
+      <p class="collage-subtitle">Heritage palaces and architectural wonders</p>
+    </div>
+
+    <div class="collage-grid royal-grid">
+      @for (royal of royalPlaces(); track royal.title) {
+        <article class="collage-item" [class]="'collage-item-' + royal.size">
+          <div class="collage-image-wrapper">
+            <img 
+              [src]="royal.imageUrl" 
+              [alt]="royal.title" 
+              class="collage-image"
+              loading="lazy">
+            <div class="collage-overlay royal-overlay"></div>
+            <div class="collage-text">
+              <span class="collage-subtitle-text">{{ royal.subtitle }}</span>
+              <h3 class="collage-item-title">{{ royal.title }}</h3>
+              <p class="collage-item-description">{{ royal.description }}</p>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- Minimal Aesthetic Collage -->
+  <section class="collage-section minimal-collage">
+    <div class="collage-header">
+      <h2 class="collage-title">Minimal Aesthetic Travel</h2>
+      <p class="collage-subtitle">Peaceful destinations with simple beauty</p>
+    </div>
+
+    <div class="collage-grid minimal-grid">
+      @for (minimal of minimalPlaces(); track minimal.title) {
+        <article class="collage-item" [class]="'collage-item-' + minimal.size">
+          <div class="collage-image-wrapper">
+            <img 
+              [src]="minimal.imageUrl" 
+              [alt]="minimal.title" 
+              class="collage-image"
+              loading="lazy">
+            <div class="collage-overlay minimal-overlay"></div>
+            <div class="collage-text">
+              <span class="collage-subtitle-text">{{ minimal.subtitle }}</span>
+              <h3 class="collage-item-title">{{ minimal.title }}</h3>
+              <p class="collage-item-description">{{ minimal.description }}</p>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- Travel Blog Posts Section -->
+  <section class="travel-posts-section">
+    <div class="posts-section-header">
+      <h2 class="posts-section-title">Travel Stories & Guides</h2>
+      <p class="posts-section-subtitle">Read our latest travel experiences and tips</p>
+    </div>
+
+    <div class="travel-posts-container">
+      @for (post of travelPosts(); track post.id) {
+        <article class="travel-post-card" [routerLink]="['/article', post.id]">
+          <div class="travel-post-image-wrapper">
+            <img [src]="post.image" [alt]="post.title" class="travel-post-image" loading="lazy">
+          </div>
+          <div class="travel-post-content">
+            <span class="travel-post-category">{{ post.category }}</span>
+            <h3 class="travel-post-title">{{ post.title }}</h3>
+            <p class="travel-post-excerpt">{{ post.excerpt }}</p>
+            <div class="travel-post-meta">
+              <span class="travel-post-author">{{ post.author }}</span>
+              <span class="travel-post-separator">•</span>
+              <span class="travel-post-date">{{ post.date }}</span>
+              <span class="travel-post-separator">•</span>
+              <span class="travel-post-read-time">{{ post.readTime }}</span>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 class="cta-title">{{ ctaContent().title }}</h2>
+      <p class="cta-description">{{ ctaContent().description }}</p>
+      <button class="cta-button" type="button">{{ ctaContent().buttonText }}</button>
+    </div>
+  </section>
 </div>
