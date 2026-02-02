@@ -161,6 +161,266 @@
   color: #d1d5db;
 }
 
+/* My Picks Section */
+.my-picks-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #fef3f8 50%, #f3e8ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.my-picks-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.my-picks-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.my-picks-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #a78bfa 0%, #d8b4fe 100%);
+  color: white;
+  padding: 0.875rem 1.75rem;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 10px 30px rgba(167, 139, 250, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+.badge-sparkle {
+  width: 1.25rem;
+  height: 1.25rem;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.my-picks-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #3e4c59;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.my-picks-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  color: #6b7b8a;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.my-picks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.my-pick-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(167, 139, 250, 0.12);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+}
+
+.my-pick-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(167, 139, 250, 0.25);
+  border-color: #d8b4fe;
+}
+
+.my-pick-image-container {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.my-pick-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.my-pick-card:hover .my-pick-image {
+  transform: scale(1.15);
+}
+
+.my-pick-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(167, 139, 250, 0.3) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.my-pick-card:hover .my-pick-overlay {
+  opacity: 1;
+}
+
+.my-pick-favorite {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(244, 114, 182, 0.4);
+  z-index: 10;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.my-pick-favorite svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+}
+
+.my-pick-content {
+  padding: 2rem;
+}
+
+.my-pick-category {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #a78bfa;
+  background: rgba(196, 181, 253, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.my-pick-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3e4c59;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.my-pick-excerpt {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #6b7b8a;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.my-pick-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  margin-bottom: 1.25rem;
+}
+
+.my-pick-author {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #9ca3af;
+}
+
+.my-pick-time {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: #d1d5db;
+}
+
+.my-pick-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #a78bfa 0%, #d8b4fe 100%);
+  color: white;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.3);
+}
+
+.my-pick-button:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #c084fc 100%);
+  box-shadow: 0 8px 20px rgba(167, 139, 250, 0.5);
+  transform: translateY(-2px);
+}
+
+.button-arrow {
+  width: 1.125rem;
+  height: 1.125rem;
+  stroke-width: 2.5px;
+  transition: transform 0.3s ease;
+}
+
+.my-pick-button:hover .button-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive Design for My Picks */
+@media (max-width: 768px) {
+  .my-picks-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .my-picks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .my-pick-image-container {
+    height: 240px;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-section {
@@ -181,5 +441,418 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .posts-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* PriPicks Featured Creator Section - Wellness & Beauty Aesthetic */
+.pripicks-skincare-section {
+  position: relative;
+  padding: 120px 40px;
+  background: linear-gradient(135deg, #e0e7ff 0%, #e9d5ff 20%, #d1fae5 40%, #fef3c7 60%, #e9d5ff 80%, #e0e7ff 100%);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pripicks-skincare-section:hover {
+  transform: scale(1.005);
+}
+
+/* Ambient Glow Elements */
+.pripicks-skincare-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+  animation: wellnessGlow 12s ease-in-out infinite;
+}
+
+.pripicks-skincare-glow-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #c4b5fd 0%, #ddd6fe 100%);
+  top: -150px;
+  left: -150px;
+  animation-delay: 0s;
+}
+
+.pripicks-skincare-glow-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #6ee7b7 0%, #a7f3d0 100%);
+  bottom: -120px;
+  right: -120px;
+  animation-delay: 4s;
+}
+
+.pripicks-skincare-glow-3 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #fef3c7 0%, #fde68a 100%);
+  top: 40%;
+  right: 15%;
+  animation-delay: 8s;
+}
+
+@keyframes wellnessGlow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(50px, -50px) scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+.pripicks-skincare-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.pripicks-skincare-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.pripicks-skincare-text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.pripicks-skincare-badge-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 32px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(30px);
+  border-radius: 100px;
+  box-shadow: 0 20px 60px rgba(139, 92, 246, 0.25);
+  align-self: flex-start;
+}
+
+.pripicks-skincare-badge-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #10b981 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+  animation: wellnessPulse 3s ease-in-out infinite;
+}
+
+@keyframes wellnessPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
+  }
+}
+
+.pripicks-skincare-badge-text {
+  text-align: left;
+}
+
+.pripicks-skincare-badge-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.pripicks-skincare-badge-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #8b5cf6 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pripicks-skincare-headline {
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
+  margin: 0;
+}
+
+.pripicks-skincare-headline-line1 {
+  display: block;
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 700;
+  color: #5b21b6;
+  margin-bottom: 16px;
+}
+
+.pripicks-skincare-headline-line2 {
+  display: block;
+  font-size: clamp(56px, 10vw, 96px);
+  font-weight: 900;
+  background: linear-gradient(135deg, #8b5cf6 0%, #10b981 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pripicks-skincare-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  line-height: 1.7;
+  color: #6b4f6e;
+  max-width: 600px;
+}
+
+.pripicks-skincare-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 40px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #10b981 100%);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 20px 60px rgba(139, 92, 246, 0.4);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  align-self: flex-start;
+}
+
+.pripicks-skincare-cta-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 30px 80px rgba(139, 92, 246, 0.5);
+  background: linear-gradient(135deg, #a78bfa 0%, #34d399 100%);
+}
+
+.pripicks-skincare-cta-arrow {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.pripicks-skincare-cta-button:hover .pripicks-skincare-cta-arrow {
+  transform: translateX(8px);
+}
+
+.pripicks-skincare-stats {
+  display: flex;
+  gap: 60px;
+  padding-top: 24px;
+  border-top: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+.pripicks-skincare-stat-item {
+  text-align: left;
+}
+
+.pripicks-skincare-stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #8b5cf6 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.pripicks-skincare-stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6b4f6e;
+}
+
+.pripicks-skincare-visual-area {
+  flex: 1;
+  position: relative;
+  min-height: 500px;
+}
+
+.pripicks-skincare-collage-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.pripicks-skincare-collage-item {
+  background: white;
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.pripicks-skincare-collage-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.pripicks-skincare-collage-item:hover::after {
+  opacity: 1;
+}
+
+.pripicks-skincare-collage-item:hover {
+  transform: translateY(-12px) rotate(0deg) scale(1.05) !important;
+  box-shadow: 0 30px 80px rgba(139, 92, 246, 0.3);
+}
+
+.pripicks-skincare-collage-item-1 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  transform: rotate(2deg);
+}
+
+.pripicks-skincare-collage-item-2 {
+  grid-column: 3;
+  grid-row: 1;
+  transform: rotate(-3deg);
+}
+
+.pripicks-skincare-collage-item-3 {
+  grid-column: 3;
+  grid-row: 2;
+  transform: rotate(2deg);
+}
+
+.pripicks-skincare-collage-item-4 {
+  grid-column: 1;
+  grid-row: 3;
+  transform: rotate(-2deg);
+}
+
+.pripicks-skincare-collage-item-5 {
+  grid-column: 2 / 4;
+  grid-row: 3;
+  transform: rotate(1deg);
+}
+
+.pripicks-skincare-collage-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e0e7ff 0%, #d1fae5 50%, #fef3c7 100%);
+  padding: 40px;
+}
+
+.pripicks-skincare-collage-icon {
+  font-size: 80px;
+  filter: drop-shadow(0 10px 30px rgba(139, 92, 246, 0.2));
+}
+
+.pripicks-skincare-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.pripicks-skincare-section:hover .pripicks-skincare-hover-overlay {
+  opacity: 1;
+}
+
+/* Responsive Design for Skincare PriPicks */
+@media (max-width: 1024px) {
+  .pripicks-skincare-content-wrapper {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .pripicks-skincare-visual-area {
+    min-height: 400px;
+    width: 100%;
+  }
+
+  .pripicks-skincare-headline-line1 {
+    font-size: 48px;
+  }
+
+  .pripicks-skincare-headline-line2 {
+    font-size: 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pripicks-skincare-section {
+    padding: 80px 20px;
+  }
+
+  .pripicks-skincare-stats {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .pripicks-skincare-collage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 120px);
+    gap: 16px;
+  }
+
+  .pripicks-skincare-collage-item-1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
+
+  .pripicks-skincare-collage-item-2,
+  .pripicks-skincare-collage-item-3 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .pripicks-skincare-collage-item-4,
+  .pripicks-skincare-collage-item-5 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .pripicks-skincare-collage-icon {
+    font-size: 48px;
+  }
+
+  .pripicks-skincare-glow {
+    filter: blur(80px);
+  }
+}
+
+/* Skincare PriPicks Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .pripicks-skincare-section *,
+  .pripicks-skincare-glow {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

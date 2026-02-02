@@ -161,6 +161,224 @@
   color: #d1d5db;
 }
 
+/* Pri's Art Picks Section */
+.picks-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #fef3f6 0%, #fff8fa 50%, #fef0f5 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.picks-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.picks-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.picks-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #ec4899 0%, #d946ef 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+.picks-icon {
+  font-size: 1.5rem;
+}
+
+.picks-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #3e4c59;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.picks-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  color: #6b7b8a;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.picks-masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.pick-item {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(236, 72, 153, 0.15);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pick-large {
+  grid-row: span 2;
+}
+
+.pick-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(236, 72, 153, 0.25);
+}
+
+.pick-image-wrapper {
+  position: relative;
+  height: 100%;
+  min-height: 450px;
+}
+
+.pick-large .pick-image-wrapper {
+  min-height: 600px;
+}
+
+.pick-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.pick-item:hover .pick-image {
+  transform: scale(1.1);
+}
+
+.pick-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+}
+
+.pick-badge-corner {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: linear-gradient(135deg, #ec4899 0%, #d946ef 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
+  z-index: 10;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pick-heart-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: white;
+}
+
+.pick-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  color: white;
+  z-index: 5;
+}
+
+.pick-category {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.pick-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.pick-excerpt {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pick-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.pick-dot {
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+}
+
+/* Responsive Design for Picks */
+@media (max-width: 768px) {
+  .picks-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .picks-masonry {
+    grid-template-columns: 1fr;
+  }
+
+  .pick-large {
+    grid-row: span 1;
+  }
+
+  .pick-image-wrapper,
+  .pick-large .pick-image-wrapper {
+    min-height: 400px;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-section {
@@ -181,5 +399,402 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .posts-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* PriPicks Featured Creator Section - Artistic Aesthetic */
+.pripicks-arts-section {
+  position: relative;
+  padding: 120px 40px;
+  background: linear-gradient(135deg, #fce7f3 0%, #e9d5ff 30%, #fef3c7 60%, #fce7f3 100%);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pripicks-arts-section:hover {
+  transform: scale(1.01);
+}
+
+/* Floating Elements */
+.pripicks-arts-float-element {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+  animation: artisticFloat 10s ease-in-out infinite;
+}
+
+.pripicks-arts-float-1 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.pripicks-arts-float-2 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #a855f7 0%, #f472b6 100%);
+  bottom: -80px;
+  right: -80px;
+  animation-delay: 3s;
+}
+
+.pripicks-arts-float-3 {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #fbbf24 0%, #ec4899 100%);
+  top: 50%;
+  right: 10%;
+  animation-delay: 6s;
+}
+
+@keyframes artisticFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -60px) scale(1.15);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.85);
+  }
+}
+
+.pripicks-arts-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.pripicks-arts-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.pripicks-arts-text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.pripicks-arts-badge-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 32px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 100px;
+  box-shadow: 0 20px 60px rgba(236, 72, 153, 0.3);
+  align-self: flex-start;
+}
+
+.pripicks-arts-badge-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
+  animation: artisticPulse 2s ease-in-out infinite;
+}
+
+@keyframes artisticPulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+.pripicks-arts-badge-text {
+  text-align: left;
+}
+
+.pripicks-arts-badge-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.pripicks-arts-badge-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pripicks-arts-headline {
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
+  margin: 0;
+}
+
+.pripicks-arts-headline-line1 {
+  display: block;
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 700;
+  color: #5a3f5f;
+  margin-bottom: 16px;
+}
+
+.pripicks-arts-headline-line2 {
+  display: block;
+  font-size: clamp(56px, 10vw, 96px);
+  font-weight: 900;
+  background: linear-gradient(135deg, #ec4899 0%, #a855f7 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pripicks-arts-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  line-height: 1.7;
+  color: #6b4f6e;
+  max-width: 600px;
+}
+
+.pripicks-arts-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 40px;
+  background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 20px 60px rgba(236, 72, 153, 0.5);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  align-self: flex-start;
+}
+
+.pripicks-arts-cta-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 30px 80px rgba(236, 72, 153, 0.6);
+  background: linear-gradient(135deg, #f472b6 0%, #c084fc 100%);
+}
+
+.pripicks-arts-cta-arrow {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.pripicks-arts-cta-button:hover .pripicks-arts-cta-arrow {
+  transform: translateX(8px);
+}
+
+.pripicks-arts-stats {
+  display: flex;
+  gap: 60px;
+  padding-top: 24px;
+  border-top: 2px solid rgba(236, 72, 153, 0.3);
+}
+
+.pripicks-arts-stat-item {
+  text-align: left;
+}
+
+.pripicks-arts-stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.pripicks-arts-stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6b4f6e;
+}
+
+.pripicks-arts-visual-area {
+  flex: 1;
+  position: relative;
+  min-height: 500px;
+}
+
+.pripicks-arts-collage-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.pripicks-arts-collage-item {
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.pripicks-arts-collage-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.pripicks-arts-collage-item:hover::after {
+  opacity: 1;
+}
+
+.pripicks-arts-collage-item:hover {
+  transform: translateY(-12px) rotate(0deg) scale(1.05) !important;
+  box-shadow: 0 30px 80px rgba(236, 72, 153, 0.35);
+}
+
+.pripicks-arts-collage-item-1 {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  transform: rotate(-2deg);
+}
+
+.pripicks-arts-collage-item-2 {
+  grid-column: 2;
+  grid-row: 1;
+  transform: rotate(3deg);
+}
+
+.pripicks-arts-collage-item-3 {
+  grid-column: 2;
+  grid-row: 2;
+  transform: rotate(-3deg);
+}
+
+.pripicks-arts-collage-item-4 {
+  grid-column: 1 / 3;
+  grid-row: 3;
+  transform: rotate(1deg);
+}
+
+.pripicks-arts-collage-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fce7f3 0%, #e9d5ff 50%, #fef3c7 100%);
+  padding: 40px;
+}
+
+.pripicks-arts-collage-icon {
+  font-size: 80px;
+  filter: drop-shadow(0 10px 30px rgba(236, 72, 153, 0.3));
+}
+
+.pripicks-arts-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.pripicks-arts-section:hover .pripicks-arts-hover-overlay {
+  opacity: 1;
+}
+
+/* Responsive Design for Arts PriPicks */
+@media (max-width: 1024px) {
+  .pripicks-arts-content-wrapper {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .pripicks-arts-visual-area {
+    min-height: 400px;
+    width: 100%;
+  }
+
+  .pripicks-arts-headline-line1 {
+    font-size: 48px;
+  }
+
+  .pripicks-arts-headline-line2 {
+    font-size: 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pripicks-arts-section {
+    padding: 80px 20px;
+  }
+
+  .pripicks-arts-stats {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .pripicks-arts-collage-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 150px);
+    gap: 16px;
+  }
+
+  .pripicks-arts-collage-item-1,
+  .pripicks-arts-collage-item-2,
+  .pripicks-arts-collage-item-3,
+  .pripicks-arts-collage-item-4 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .pripicks-arts-collage-icon {
+    font-size: 48px;
+  }
+
+  .pripicks-arts-float-element {
+    filter: blur(60px);
+  }
+}
+
+/* Arts PriPicks Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .pripicks-arts-section *,
+  .pripicks-arts-float-element {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

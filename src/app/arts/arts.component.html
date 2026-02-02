@@ -8,6 +8,137 @@
     </div>
   </section>
 
+  <!-- PriPicks Featured Creator Section - Artistic Aesthetic -->
+  <section class="pripicks-arts-section" [routerLink]="['/']">
+    <!-- Floating Elements -->
+    <div class="pripicks-arts-float-element pripicks-arts-float-1"></div>
+    <div class="pripicks-arts-float-element pripicks-arts-float-2"></div>
+    <div class="pripicks-arts-float-element pripicks-arts-float-3"></div>
+    
+    <div class="pripicks-arts-container">
+      <div class="pripicks-arts-content-wrapper">
+        <!-- Text Content -->
+        <div class="pripicks-arts-text-content">
+          <div class="pripicks-arts-badge-wrapper">
+            <div class="pripicks-arts-badge-icon">
+              🎨
+            </div>
+            <div class="pripicks-arts-badge-text">
+              <div class="pripicks-arts-badge-label">Handpicked Collection</div>
+              <div class="pripicks-arts-badge-title">PriPicks</div>
+            </div>
+          </div>
+
+          <h2 class="pripicks-arts-headline">
+            <span class="pripicks-arts-headline-line1">Creative</span>
+            <span class="pripicks-arts-headline-line2">Expressions</span>
+          </h2>
+
+          <p class="pripicks-arts-description">
+            Dive into a curated collection of contemporary art, gallery visits, and creative insights 
+            that inspire me every day. From street art to museum exhibitions, discover the beauty 
+            that shapes my artistic perspective.
+          </p>
+
+          <button class="pripicks-arts-cta-button">
+            <span>View Art Collection</span>
+            <svg class="pripicks-arts-cta-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </button>
+
+          <div class="pripicks-arts-stats">
+            <div class="pripicks-arts-stat-item">
+              <div class="pripicks-arts-stat-number">150+</div>
+              <div class="pripicks-arts-stat-label">Artworks</div>
+            </div>
+            <div class="pripicks-arts-stat-item">
+              <div class="pripicks-arts-stat-number">20+</div>
+              <div class="pripicks-arts-stat-label">Exhibitions</div>
+            </div>
+            <div class="pripicks-arts-stat-item">
+              <div class="pripicks-arts-stat-number">∞</div>
+              <div class="pripicks-arts-stat-label">Creativity</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Collage -->
+        <div class="pripicks-arts-visual-area">
+          <div class="pripicks-arts-collage-grid">
+            <div class="pripicks-arts-collage-item pripicks-arts-collage-item-1">
+              <div class="pripicks-arts-collage-content">
+                <div class="pripicks-arts-collage-icon">🖼️</div>
+              </div>
+            </div>
+            <div class="pripicks-arts-collage-item pripicks-arts-collage-item-2">
+              <div class="pripicks-arts-collage-content">
+                <div class="pripicks-arts-collage-icon">🎭</div>
+              </div>
+            </div>
+            <div class="pripicks-arts-collage-item pripicks-arts-collage-item-3">
+              <div class="pripicks-arts-collage-content">
+                <div class="pripicks-arts-collage-icon">🎪</div>
+              </div>
+            </div>
+            <div class="pripicks-arts-collage-item pripicks-arts-collage-item-4">
+              <div class="pripicks-arts-collage-content">
+                <div class="pripicks-arts-collage-icon">🖌️</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hover Overlay -->
+      <div class="pripicks-arts-hover-overlay"></div>
+    </div>
+  </section>
+
+  <!-- Pri's Art Picks Section -->
+  <section class="picks-section">
+    <div class="picks-container">
+      <div class="picks-header">
+        <div class="picks-badge">
+          <span class="picks-icon">🎨</span>
+          <span>Pri's Inspiring Discoveries</span>
+        </div>
+        <h2 class="picks-title">Art That Moved Me</h2>
+        <p class="picks-subtitle">
+          These pieces stopped me in my tracks and made me see the world differently
+        </p>
+      </div>
+
+      <div class="picks-masonry">
+        @for (post of artsPosts().slice(0, 3); track post.id; let i = $index) {
+          <article class="pick-item" [class.pick-large]="i === 0">
+            <div class="pick-image-wrapper">
+              <img [src]="post.image" [alt]="post.title" class="pick-image" loading="lazy">
+              <div class="pick-gradient"></div>
+              
+              <div class="pick-badge-corner">
+                <svg class="pick-heart-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                </svg>
+              </div>
+
+              <div class="pick-content">
+                <span class="pick-category">{{ post.category }}</span>
+                <h3 class="pick-title">{{ post.title }}</h3>
+                <p class="pick-excerpt">{{ post.excerpt }}</p>
+                <div class="pick-meta">
+                  <span>{{ post.author }}</span>
+                  <span class="pick-dot">•</span>
+                  <span>{{ post.readTime }}</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
   <!-- Posts Grid -->
   <section class="posts-section">
     <div class="posts-container">

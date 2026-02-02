@@ -8,6 +8,149 @@
     </div>
   </section>
 
+  <!-- PriPicks Featured Creator Section - Wellness & Beauty Aesthetic -->
+  <section class="pripicks-skincare-section" [routerLink]="['/']">
+    <!-- Ambient Glow Elements -->
+    <div class="pripicks-skincare-glow pripicks-skincare-glow-1"></div>
+    <div class="pripicks-skincare-glow pripicks-skincare-glow-2"></div>
+    <div class="pripicks-skincare-glow pripicks-skincare-glow-3"></div>
+    
+    <div class="pripicks-skincare-container">
+      <div class="pripicks-skincare-content-wrapper">
+        <!-- Text Content -->
+        <div class="pripicks-skincare-text-content">
+          <div class="pripicks-skincare-badge-wrapper">
+            <div class="pripicks-skincare-badge-icon">
+              🌿
+            </div>
+            <div class="pripicks-skincare-badge-text">
+              <div class="pripicks-skincare-badge-label">Wellness Curation</div>
+              <div class="pripicks-skincare-badge-title">PriPicks</div>
+            </div>
+          </div>
+
+          <h2 class="pripicks-skincare-headline">
+            <span class="pripicks-skincare-headline-line1">Beauty</span>
+            <span class="pripicks-skincare-headline-line2">From Within</span>
+          </h2>
+
+          <p class="pripicks-skincare-description">
+            Discover my carefully curated selection of skincare rituals, clean beauty products, and 
+            wellness practices that have transformed my routine. From Korean innovations to Ayurvedic 
+            traditions, explore what truly works for radiant, healthy skin.
+          </p>
+
+          <button class="pripicks-skincare-cta-button">
+            <span>Explore Wellness Guide</span>
+            <svg class="pripicks-skincare-cta-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </button>
+
+          <div class="pripicks-skincare-stats">
+            <div class="pripicks-skincare-stat-item">
+              <div class="pripicks-skincare-stat-number">80+</div>
+              <div class="pripicks-skincare-stat-label">Products</div>
+            </div>
+            <div class="pripicks-skincare-stat-item">
+              <div class="pripicks-skincare-stat-number">15+</div>
+              <div class="pripicks-skincare-stat-label">Routines</div>
+            </div>
+            <div class="pripicks-skincare-stat-item">
+              <div class="pripicks-skincare-stat-number">∞</div>
+              <div class="pripicks-skincare-stat-label">Self-Care</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Collage -->
+        <div class="pripicks-skincare-visual-area">
+          <div class="pripicks-skincare-collage-grid">
+            <div class="pripicks-skincare-collage-item pripicks-skincare-collage-item-1">
+              <div class="pripicks-skincare-collage-content">
+                <div class="pripicks-skincare-collage-icon">🧴</div>
+              </div>
+            </div>
+            <div class="pripicks-skincare-collage-item pripicks-skincare-collage-item-2">
+              <div class="pripicks-skincare-collage-content">
+                <div class="pripicks-skincare-collage-icon">💆</div>
+              </div>
+            </div>
+            <div class="pripicks-skincare-collage-item pripicks-skincare-collage-item-3">
+              <div class="pripicks-skincare-collage-content">
+                <div class="pripicks-skincare-collage-icon">🌸</div>
+              </div>
+            </div>
+            <div class="pripicks-skincare-collage-item pripicks-skincare-collage-item-4">
+              <div class="pripicks-skincare-collage-content">
+                <div class="pripicks-skincare-collage-icon">✨</div>
+              </div>
+            </div>
+            <div class="pripicks-skincare-collage-item pripicks-skincare-collage-item-5">
+              <div class="pripicks-skincare-collage-content">
+                <div class="pripicks-skincare-collage-icon">🍃</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hover Overlay -->
+      <div class="pripicks-skincare-hover-overlay"></div>
+    </div>
+  </section>
+
+  <!-- Pri's Skincare Picks Section -->
+  <section class="my-picks-section">
+    <div class="my-picks-container">
+      <div class="my-picks-header">
+        <div class="my-picks-badge">
+          <svg class="badge-sparkle" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+          </svg>
+          <span>Pri's Beauty Essentials</span>
+        </div>
+        <h2 class="my-picks-title">Products That Actually Work</h2>
+        <p class="my-picks-description">
+          After years of trial and error, these are the skincare heroes I swear by—no gimmicks, just real results
+        </p>
+      </div>
+
+      <div class="my-picks-grid">
+        @for (post of posts().slice(0, 4); track post.id) {
+          <article class="my-pick-card">
+            <div class="my-pick-image-container">
+              <img [src]="post.image" [alt]="post.title" class="my-pick-image" loading="lazy">
+              <div class="my-pick-overlay"></div>
+              
+              <div class="my-pick-favorite">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </div>
+            </div>
+            
+            <div class="my-pick-content">
+              <span class="my-pick-category">{{ post.category }}</span>
+              <h3 class="my-pick-title">{{ post.title }}</h3>
+              <p class="my-pick-excerpt">{{ post.excerpt }}</p>
+              <div class="my-pick-footer">
+                <span class="my-pick-author">{{ post.author }}</span>
+                <span class="my-pick-time">{{ post.readTime }}</span>
+              </div>
+              <button class="my-pick-button">
+                Read Full Review
+                <svg class="button-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
   <!-- Posts Grid -->
   <section class="posts-section">
     <div class="posts-container">

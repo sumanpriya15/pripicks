@@ -52,7 +52,7 @@
     </div>
     <div class="preview-grid">
       @for (post of moviePosts(); track post.id) {
-        <article class="preview-card" [routerLink]="['/article', post.id]">
+        <article class="preview-card" routerLink="/movies">
           <div class="preview-image-wrapper">
             <img [src]="post.image" [alt]="post.title" class="preview-image" loading="lazy">
           </div>
@@ -74,7 +74,7 @@
     </div>
     <div class="preview-grid">
       @for (post of travelPosts(); track post.id) {
-        <article class="preview-card" [routerLink]="['/article', post.id]">
+        <article class="preview-card" routerLink="/travel">
           <div class="preview-image-wrapper">
             <img [src]="post.image" [alt]="post.title" class="preview-image" loading="lazy">
           </div>
@@ -96,7 +96,7 @@
     </div>
     <div class="preview-grid">
       @for (post of artsPosts(); track post.id) {
-        <article class="preview-card" [routerLink]="['/article', post.id]">
+        <article class="preview-card" routerLink="/arts">
           <div class="preview-image-wrapper">
             <img [src]="post.image" [alt]="post.title" class="preview-image" loading="lazy">
           </div>
@@ -118,7 +118,7 @@
     </div>
     <div class="preview-grid">
       @for (post of skincarePosts(); track post.id) {
-        <article class="preview-card" [routerLink]="['/article', post.id]">
+        <article class="preview-card" routerLink="/skincare">
           <div class="preview-image-wrapper">
             <img [src]="post.image" [alt]="post.title" class="preview-image" loading="lazy">
           </div>

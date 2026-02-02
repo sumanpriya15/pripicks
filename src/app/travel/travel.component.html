@@ -9,6 +9,155 @@
     </div>
   </section>
 
+  <!-- PriPicks Featured Creator Section - Wanderlust Theme -->
+  <section class="pripicks-creator-section">
+    <div class="pripicks-container">
+      <div class="pripicks-content-wrapper">
+        
+        <!-- Creator Content -->
+        <div class="pripicks-text-content">
+          <!-- Badge -->
+          <div class="pripicks-badge-wrapper">
+            <div class="pripicks-badge-icon">
+              ✈️
+            </div>
+            <div class="pripicks-badge-text">
+              <p class="pripicks-badge-label">Travel Curated by</p>
+              <h3 class="pripicks-badge-title">PriPicks</h3>
+            </div>
+          </div>
+
+          <!-- Main Headline -->
+          <h2 class="pripicks-headline">
+            <span class="pripicks-headline-line1">Wanderlust</span>
+            <span class="pripicks-headline-line2">Chronicles</span>
+          </h2>
+
+          <!-- Description -->
+          <p class="pripicks-description">
+            A curated journey through breathtaking destinations, hidden gems, and unforgettable adventures. Each place holds a memory, each path tells a story.
+          </p>
+
+          <!-- CTA Button -->
+          <div class="pripicks-cta-wrapper">
+            <button class="pripicks-cta-button">
+              <span>Explore Destinations</span>
+              <svg class="pripicks-cta-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Stats -->
+          <div class="pripicks-stats">
+            <div class="pripicks-stat-item">
+              <p class="pripicks-stat-number">50+</p>
+              <p class="pripicks-stat-label">Destinations</p>
+            </div>
+            <div class="pripicks-stat-item">
+              <p class="pripicks-stat-number">15</p>
+              <p class="pripicks-stat-label">Countries</p>
+            </div>
+            <div class="pripicks-stat-item">
+              <p class="pripicks-stat-number">∞</p>
+              <p class="pripicks-stat-label">Adventures</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Collage Area -->
+        <div class="pripicks-visual-area">
+          <div class="pripicks-collage-grid">
+            <div class="pripicks-collage-item pripicks-collage-item-1">
+              <div class="pripicks-collage-content">
+                <span class="pripicks-collage-icon">🏔️</span>
+              </div>
+            </div>
+            <div class="pripicks-collage-item pripicks-collage-item-2">
+              <div class="pripicks-collage-content">
+                <span class="pripicks-collage-icon">🏖️</span>
+              </div>
+            </div>
+            <div class="pripicks-collage-item pripicks-collage-item-3">
+              <div class="pripicks-collage-content">
+                <span class="pripicks-collage-icon">🏰</span>
+              </div>
+            </div>
+            <div class="pripicks-collage-item pripicks-collage-item-4">
+              <div class="pripicks-collage-content">
+                <span class="pripicks-collage-icon">🌴</span>
+              </div>
+            </div>
+            <div class="pripicks-collage-item pripicks-collage-item-5">
+              <div class="pripicks-collage-content">
+                <span class="pripicks-collage-icon">🗼</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Hover Overlay Effect -->
+    <div class="pripicks-hover-overlay"></div>
+  </section>
+
+  <!-- Pri's Travel Picks Section -->
+  <section class="picks-section">
+    <div class="picks-header">
+      <div class="picks-badge">
+        <span class="picks-icon">✈️</span>
+        <span class="picks-label">Pri's Dream Destinations</span>
+      </div>
+      <h2 class="picks-title">Places I'd Go Back to in a Heartbeat</h2>
+      <p class="picks-description">
+        These destinations aren't just beautiful—they changed something in me. Here are my absolute favorites from years of wandering.
+      </p>
+    </div>
+
+    <div class="picks-grid">
+      @for (destination of topDestinations().slice(0, 4); track destination.id) {
+        <article class="pick-card">
+          <div class="pick-image-wrapper">
+            <img 
+              [src]="destination.imageUrl" 
+              [alt]="destination.title" 
+              class="pick-image"
+              loading="lazy">
+            <div class="pick-overlay"></div>
+            
+            <!-- Heart Badge -->
+            <div class="pick-badge">
+              <svg class="pick-heart" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+              <span class="pick-badge-text">My Favorite</span>
+            </div>
+
+            <!-- Destination Info Overlay -->
+            <div class="pick-content">
+              <span class="pick-location">
+                <svg class="pick-location-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                {{ destination.location }}
+              </span>
+              <h3 class="pick-title">{{ destination.title }}</h3>
+              <p class="pick-description">{{ destination.description }}</p>
+              <button class="pick-button">
+                Explore More
+                <svg class="pick-button-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
   <!-- Top 10 Destinations Grid -->
   <section class="destinations-section">
     <div class="section-header">
