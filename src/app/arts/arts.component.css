@@ -288,11 +288,6 @@
   animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
 .pick-heart-icon {
   width: 1.75rem;
   height: 1.75rem;
@@ -449,19 +444,7 @@
   background: linear-gradient(135deg, #fbbf24 0%, #ec4899 100%);
   top: 50%;
   right: 10%;
-  animation-delay: 6s;
-}
-
-@keyframes artisticFloat {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(40px, -60px) scale(1.15);
-  }
-  66% {
-    transform: translate(-30px, 30px) scale(0.85);
-  }
+  animation: float 8s ease-in-out infinite;
 }
 
 .pripicks-arts-container {
@@ -506,16 +489,7 @@
   justify-content: center;
   font-size: 32px;
   box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
-  animation: artisticPulse 2s ease-in-out infinite;
-}
-
-@keyframes artisticPulse {
-  0%, 100% {
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    transform: scale(1.1) rotate(5deg);
-  }
+  animation: pulse 3s ease-in-out infinite;
 }
 
 .pripicks-arts-badge-text {

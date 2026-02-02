@@ -1,31 +1,13 @@
 /* Travel Component - Modern Collage Design */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600&family=Inter:wght@400;600&display=swap');
 
 /* Page Container */
 .travel-page {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    #E6E6FA 0%,
-    #FFE5B4 12.5%,
-    #B0E0E6 25%,
-    #F0E68C 37.5%,
-    #E0BBE4 50%,
-    #FFDAB9 62.5%,
-    #98D8C8 75%,
-    #DDA0DD 87.5%,
-    #E6E6FA 100%
-  );
+  background: linear-gradient(135deg, #E6E6FA 0%, #FFE5B4 25%, #B0E0E6 50%, #DDA0DD 75%, #E6E6FA 100%);
   background-size: 400% 400%;
-  animation: aestheticGradient 20s ease infinite;
+  animation: gradientShift 20s ease infinite;
   overflow-x: hidden;
-}
-
-@keyframes aestheticGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 /* Hero Banner */
@@ -34,30 +16,13 @@
   height: 70vh;
   min-height: 500px;
   max-height: 700px;
-  background: 
-    linear-gradient(135deg, 
-      #FFB6D9 0%,
-      #FFDAB9 12%,
-      #FFE4E1 24%,
-      #E6E6FA 36%,
-      #B0E0E6 48%,
-      #DDA0DD 60%,
-      #FFC0CB 72%,
-      #FFDEAD 84%,
-      #FFB6D9 100%
-    );
+  background: linear-gradient(135deg, #FFB6D9 0%, #E6E6FA 33%, #B0E0E6 66%, #FFB6D9 100%);
   background-size: 200% 200%;
   animation: gradientShift 15s ease infinite;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 .hero-banner-overlay {
@@ -998,12 +963,7 @@
   bottom: 0;
   background: radial-gradient(circle at 20% 50%, rgba(147, 197, 253, 0.3) 0%, transparent 50%),
               radial-gradient(circle at 80% 80%, rgba(251, 207, 232, 0.3) 0%, transparent 50%);
-  animation: aestheticPulse 8s ease-in-out infinite;
-}
-
-@keyframes aestheticPulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 0.8; }
+  animation: pulse 8s ease-in-out infinite;
 }
 
 .pripicks-container {
@@ -1048,11 +1008,6 @@
   font-size: 32px;
   box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
   animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
 }
 
 .pripicks-badge-text {

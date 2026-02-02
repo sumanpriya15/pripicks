@@ -4,6 +4,7 @@
 @tailwind utilities;
 
 @import "tailwindcss";
+@import "./app/shared/animations.css";
 
 /* Smooth scrolling for anchor links */
 html {
