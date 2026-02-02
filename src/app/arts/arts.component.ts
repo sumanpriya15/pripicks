@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import artsData from '../Data/arts.json';
+import fashionData from '../Data/fashion.json';
 
-interface ArtsPost {
+interface FashionPost {
   id: number;
   title: string;
   excerpt: string;
@@ -21,5 +21,5 @@ interface ArtsPost {
   styleUrl: './arts.component.css'
 })
 export class ArtsComponent {
-  artsPosts = signal<ArtsPost[]>(artsData);
+  fashionPosts = signal<FashionPost[]>(fashionData);
 }

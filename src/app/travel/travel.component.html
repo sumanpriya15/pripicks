@@ -2,10 +2,15 @@
   <!-- Hero Banner -->
   <section class="hero-banner">
     <div class="hero-banner-overlay"></div>
-    <div class="hero-banner-content">
-      <h1 class="hero-banner-title">{{ heroBanner().title }}</h1>
-      <p class="hero-banner-subtitle">{{ heroBanner().subtitle }}</p>
-      <p class="hero-banner-description">{{ heroBanner().description }}</p>
+    <div class="hero-banner-content animate-fade-in">
+      <div class="inline-block mb-4">
+        <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white/80 backdrop-blur-sm border border-white/40 animate-float" style="color: #4B5563; font-weight: 600;">
+          ✈️ Wanderlust Adventures
+        </span>
+      </div>
+      <h1 class="hero-banner-title animate-slide-up">{{ heroBanner().title }}</h1>
+      <p class="hero-banner-subtitle animate-slide-up" style="animation-delay: 0.2s;">{{ heroBanner().subtitle }}</p>
+      <p class="hero-banner-description animate-slide-up" style="animation-delay: 0.3s;">{{ heroBanner().description }}</p>
     </div>
   </section>
 

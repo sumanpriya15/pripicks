@@ -1,0 +1,86 @@
+[
+  {
+    "id": 301,
+    "title": "Spring Fashion Trends",
+    "excerpt": "Fresh styles and color palettes defining this season's wardrobe essentials.",
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&h=600&fit=crop"
+    ],
+    "author": "Emma Watson",
+    "date": "January 30, 2026",
+    "category": "Trends",
+    "readTime": "6 min read"
+  },
+  {
+    "id": 302,
+    "title": "Capsule Wardrobe Guide",
+    "excerpt": "Building a versatile collection with timeless pieces and smart styling.",
+    "image": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=600&fit=crop"
+    ],
+    "author": "Lucas Brown",
+    "date": "January 28, 2026",
+    "category": "Styling",
+    "readTime": "8 min read"
+  },
+  {
+    "id": 303,
+    "title": "Street Style Inspiration",
+    "excerpt": "Real-world fashion moments captured from city streets worldwide.",
+    "image": "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&h=600&fit=crop"
+    ],
+    "author": "Sophia Taylor",
+    "date": "January 26, 2026",
+    "category": "Street Style",
+    "readTime": "7 min read"
+  },
+  {
+    "id": 304,
+    "title": "Sustainable Fashion",
+    "excerpt": "Ethical brands and eco-conscious choices for a stylish future.",
+    "image": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&h=600&fit=crop"
+    ],
+    "author": "Marcus Johnson",
+    "date": "January 24, 2026",
+    "category": "Sustainable",
+    "readTime": "5 min read"
+  },
+  {
+    "id": 305,
+    "title": "Accessory Essentials",
+    "excerpt": "Elevate any outfit with the perfect bags, shoes, and jewelry.",
+    "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&h=600&fit=crop"
+    ],
+    "author": "Olivia Martinez",
+    "date": "January 22, 2026",
+    "category": "Accessories",
+    "readTime": "9 min read"
+  },
+  {
+    "id": 306,
+    "title": "Seasonal Lookbooks",
+    "excerpt": "Complete outfit ideas styled for every occasion and weather.",
+    "image": "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&h=600&fit=crop"
+    ],
+    "author": "Benjamin Clark",
+    "date": "January 20, 2026",
+    "category": "Lookbooks",
+    "readTime": "10 min read"
+  }
+]

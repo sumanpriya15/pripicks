@@ -2,13 +2,18 @@
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 class="hero-title">Arts</h1>
-      <p class="hero-subtitle">Creative expressions and culture</p>
+    <div class="hero-content animate-fade-in">
+      <div class="inline-block mb-4">
+        <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-pink-100/80 text-pink-800 backdrop-blur-sm border border-pink-200 animate-float">
+          👗 Style & Trends
+        </span>
+      </div>
+      <h1 class="hero-title animate-slide-up">Fashion</h1>
+      <p class="hero-subtitle animate-slide-up" style="animation-delay: 0.2s;">Style guides, outfit inspiration, and seasonal trends</p>
     </div>
   </section>
 
-  <!-- PriPicks Featured Creator Section - Artistic Aesthetic -->
+  <!-- PriPicks Featured Creator Section - Fashion Aesthetic -->
   <section class="pripicks-arts-section" [routerLink]="['/']">
     <!-- Floating Elements -->
     <div class="pripicks-arts-float-element pripicks-arts-float-1"></div>
@@ -21,27 +26,27 @@
         <div class="pripicks-arts-text-content">
           <div class="pripicks-arts-badge-wrapper">
             <div class="pripicks-arts-badge-icon">
-              🎨
+              👗
             </div>
             <div class="pripicks-arts-badge-text">
-              <div class="pripicks-arts-badge-label">Handpicked Collection</div>
+              <div class="pripicks-arts-badge-label">Style Curation</div>
               <div class="pripicks-arts-badge-title">PriPicks</div>
             </div>
           </div>
 
           <h2 class="pripicks-arts-headline">
-            <span class="pripicks-arts-headline-line1">Creative</span>
-            <span class="pripicks-arts-headline-line2">Expressions</span>
+            <span class="pripicks-arts-headline-line1">Fashion</span>
+            <span class="pripicks-arts-headline-line2">Forward</span>
           </h2>
 
           <p class="pripicks-arts-description">
-            Dive into a curated collection of contemporary art, gallery visits, and creative insights 
-            that inspire me every day. From street art to museum exhibitions, discover the beauty 
-            that shapes my artistic perspective.
+            Explore my curated collection of outfit inspirations, styling tips, and fashion trends. 
+            From capsule wardrobes to seasonal lookbooks, discover style ideas that blend comfort 
+            with elegance for every occasion.
           </p>
 
           <button class="pripicks-arts-cta-button">
-            <span>View Art Collection</span>
+            <span>View Style Guide</span>
             <svg class="pripicks-arts-cta-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
             </svg>
@@ -49,16 +54,16 @@
 
           <div class="pripicks-arts-stats">
             <div class="pripicks-arts-stat-item">
-              <div class="pripicks-arts-stat-number">150+</div>
-              <div class="pripicks-arts-stat-label">Artworks</div>
+              <div class="pripicks-arts-stat-number">200+</div>
+              <div class="pripicks-arts-stat-label">Outfits</div>
             </div>
             <div class="pripicks-arts-stat-item">
-              <div class="pripicks-arts-stat-number">20+</div>
-              <div class="pripicks-arts-stat-label">Exhibitions</div>
+              <div class="pripicks-arts-stat-number">30+</div>
+              <div class="pripicks-arts-stat-label">Lookbooks</div>
             </div>
             <div class="pripicks-arts-stat-item">
               <div class="pripicks-arts-stat-number">∞</div>
-              <div class="pripicks-arts-stat-label">Creativity</div>
+              <div class="pripicks-arts-stat-label">Style</div>
             </div>
           </div>
         </div>
@@ -95,22 +100,22 @@
     </div>
   </section>
 
-  <!-- Pri's Art Picks Section -->
+  <!-- Pri's Fashion Picks Section -->
   <section class="picks-section">
     <div class="picks-container">
       <div class="picks-header">
         <div class="picks-badge">
-          <span class="picks-icon">🎨</span>
-          <span>Pri's Inspiring Discoveries</span>
+          <span class="picks-icon">👗</span>
+          <span>Pri's Style Favorites</span>
         </div>
-        <h2 class="picks-title">Art That Moved Me</h2>
+        <h2 class="picks-title">Outfits That Inspire Me</h2>
         <p class="picks-subtitle">
-          These pieces stopped me in my tracks and made me see the world differently
+          These looks captured my heart and elevated my style game
         </p>
       </div>
 
       <div class="picks-masonry">
-        @for (post of artsPosts().slice(0, 3); track post.id; let i = $index) {
+        @for (post of fashionPosts().slice(0, 3); track post.id; let i = $index) {
           <article class="pick-item" [class.pick-large]="i === 0">
             <div class="pick-image-wrapper">
               <img [src]="post.image" [alt]="post.title" class="pick-image" loading="lazy">
@@ -142,7 +147,7 @@
   <!-- Posts Grid -->
   <section class="posts-section">
     <div class="posts-container">
-      @for (post of artsPosts(); track post.id) {
+      @for (post of fashionPosts(); track post.id) {
         <article class="post-card" [routerLink]="['/article', post.id]">
           <div class="post-image-wrapper">
             <img [src]="post.image" [alt]="post.title" class="post-image" loading="lazy">

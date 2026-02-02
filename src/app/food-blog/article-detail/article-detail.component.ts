@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BlogPost, BLOG_POSTS } from '../../Data/blog-posts.data';
 import moviesData from '../../Data/movies.json';
 import travelData from '../../Data/travel.json';
-import artsData from '../../Data/arts.json';
+import fashionData from '../../Data/fashion.json';
 import skincareData from '../../Data/skincare.json';
 
 interface Article {
@@ -59,9 +59,9 @@ export class ArticleDetailComponent implements OnInit {
         foundArticle = travelData.find(post => post.id === articleId) as Article | undefined;
       }
       
-      // Search in arts
+      // Search in fashion
       if (!foundArticle) {
-        foundArticle = artsData.find(post => post.id === articleId) as Article | undefined;
+        foundArticle = fashionData.find(post => post.id === articleId) as Article | undefined;
       }
       
       // Search in skincare

@@ -18,8 +18,13 @@ export const routes: Routes = [
     loadComponent: () => import('./movies/movie-detail/movie-detail.component').then(m => m.MovieDetailComponent)
   },
   {
-    path: 'arts',
+    path: 'fashion',
     loadComponent: () => import('./arts/arts.component').then(m => m.ArtsComponent)
+  },
+  {
+    path: 'arts',
+    redirectTo: 'fashion',
+    pathMatch: 'full'
   },
   {
     path: 'travel',

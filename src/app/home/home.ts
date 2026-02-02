@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { BLOG_POSTS } from '../Data/blog-posts.data';
 import moviesData from '../Data/movies.json';
 import travelData from '../Data/travel.json';
-import artsData from '../Data/arts.json';
+import fashionData from '../Data/fashion.json';
 import skincareData from '../Data/skincare.json';
 
 interface Category {
@@ -53,10 +53,10 @@ export class Home implements OnInit {
       color: '#06b6d4'
     },
     {
-      name: 'Arts',
-      description: 'Creative expressions and culture',
-      icon: '🎨',
-      route: '/arts',
+      name: 'Fashion',
+      description: 'Style guides and outfit inspiration',
+      icon: '👗',
+      route: '/fashion',
       color: '#ec4899'
     },
     {
@@ -71,7 +71,7 @@ export class Home implements OnInit {
   foodPosts = signal<Post[]>([]);
   moviePosts = signal<Post[]>([]);
   travelPosts = signal<Post[]>([]);
-  artsPosts = signal<Post[]>([]);
+  fashionPosts = signal<Post[]>([]);
   skincarePosts = signal<Post[]>([]);
 
   ngOnInit() {
@@ -102,13 +102,13 @@ export class Home implements OnInit {
       category: 'Travel'
     })));
 
-    // Load arts posts from JSON
-    this.artsPosts.set(artsData.slice(0, 3).map(post => ({
+    // Load fashion posts from JSON
+    this.fashionPosts.set(fashionData.slice(0, 3).map(post => ({
       id: post.id,
       title: post.title,
       excerpt: post.excerpt,
       image: post.image,
-      category: 'Arts'
+      category: 'Fashion'
     })));
 
     // Load skincare posts from JSON

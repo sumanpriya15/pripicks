@@ -1,4 +1,293 @@
 /* Food Blog Component Styles */
+
+/* ============================================
+   DESSERT HERO BANNER - Pastel Aesthetic
+   ============================================ */
+
+/* Hero Container */
+.dessert-hero-banner {
+  position: relative;
+  min-height: 70vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Base Gradient - Soft Pastel Dessert Tones */
+.dessert-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    #FFE5EC 0%,      /* Pastel pink */
+    #FFF8E7 15%,     /* Cream */
+    #E0F4F1 30%,     /* Mint green */
+    #E8E5F8 45%,     /* Lavender */
+    #FFE8DC 60%,     /* Peach */
+    #E3F2FD 75%,     /* Baby blue */
+    #FCE4EC 90%,     /* Light pink */
+    #FFF5F0 100%     /* Cream blush */
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+}
+
+/* Subtle Dessert Elements Background */
+.dessert-hero-elements {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.dessert-element {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.25;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Macaron Pink - Top Left */
+.macaron-pink {
+  width: 350px;
+  height: 350px;
+  top: -10%;
+  left: -5%;
+  background: radial-gradient(circle, #FFB6D9 0%, #FFC9E5 50%, transparent 70%);
+  animation-delay: 0s;
+}
+
+/* Macaron Mint - Top Right */
+.macaron-mint {
+  width: 280px;
+  height: 280px;
+  top: 5%;
+  right: 10%;
+  background: radial-gradient(circle, #B8E6D5 0%, #D4F4E7 50%, transparent 70%);
+  animation-delay: 1.5s;
+}
+
+/* Macaron Lavender - Middle Left */
+.macaron-lavender {
+  width: 320px;
+  height: 320px;
+  top: 40%;
+  left: 5%;
+  background: radial-gradient(circle, #D5C6E8 0%, #E8DFF5 50%, transparent 70%);
+  animation-delay: 3s;
+}
+
+/* Cupcake Peach - Middle */
+.cupcake-peach {
+  width: 400px;
+  height: 400px;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, #FFD4B8 0%, #FFE8D9 50%, transparent 70%);
+  filter: blur(80px);
+  animation-delay: 2s;
+}
+
+/* Donut Cream - Bottom Right */
+.donut-cream {
+  width: 340px;
+  height: 340px;
+  bottom: -8%;
+  right: -3%;
+  background: radial-gradient(circle, #FFF4E0 0%, #FFFAF0 50%, transparent 70%);
+  animation-delay: 4s;
+}
+
+/* Swirl Baby Blue - Middle Right */
+.swirl-blue {
+  width: 260px;
+  height: 260px;
+  top: 50%;
+  right: 15%;
+  background: radial-gradient(circle, #C8E6F5 0%, #E3F2FD 50%, transparent 70%);
+  animation-delay: 2.5s;
+}
+
+/* Candy Pink - Bottom Left */
+.candy-pink {
+  width: 300px;
+  height: 300px;
+  bottom: 10%;
+  left: 12%;
+  background: radial-gradient(circle, #FFD1E3 0%, #FFE5F1 50%, transparent 70%);
+  animation-delay: 3.5s;
+}
+
+/* Cake Lavender - Top Center */
+.cake-lavender {
+  width: 240px;
+  height: 240px;
+  top: 15%;
+  left: 35%;
+  background: radial-gradient(circle, #E5D9F2 0%, #F3EBF9 50%, transparent 70%);
+  animation-delay: 1s;
+}
+
+/* Center Overlay for Text Readability */
+.dessert-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.4) 40%,
+    rgba(255, 255, 255, 0.2) 70%,
+    transparent 100%
+  );
+  backdrop-filter: blur(2px);
+}
+
+/* Typography Styles */
+.dessert-hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: #2D3748;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  text-shadow: 0 2px 20px rgba(255, 255, 255, 0.9);
+  animation: slideUp 0.8s ease-out;
+}
+
+.dessert-hero-subtitle-gradient {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  background: linear-gradient(
+    135deg,
+    #FF6B9D 0%,
+    #C084FC 25%,
+    #60A5FA 50%,
+    #34D399 75%,
+    #FCA5A5 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 8px rgba(255, 182, 217, 0.3));
+}
+
+.dessert-hero-description {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: #4A5568;
+  margin-bottom: 2rem;
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.8);
+  animation: slideUp 0.8s ease-out 0.2s backwards;
+}
+
+/* Badge Styling */
+.dessert-badge {
+  background: linear-gradient(135deg, rgba(255, 182, 217, 0.3) 0%, rgba(229, 217, 242, 0.3) 100%);
+  backdrop-filter: blur(10px);
+  color: #553C5C;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 15px rgba(255, 182, 217, 0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Button Styles */
+.dessert-hero-btn-primary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #FF6B9D 0%, #F687B3 50%, #FCA5A5 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-radius: 9999px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3);
+  transition: all 0.3s ease;
+  animation: slideUp 0.8s ease-out 0.4s backwards;
+}
+
+.dessert-hero-btn-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(255, 107, 157, 0.4);
+  background: linear-gradient(135deg, #F687B3 0%, #FF6B9D 50%, #FCA5A5 100%);
+}
+
+.dessert-hero-btn-secondary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  color: #553C5C;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-radius: 9999px;
+  text-align: center;
+  border: 2px solid rgba(255, 182, 217, 0.4);
+  box-shadow: 0 10px 25px rgba(213, 198, 232, 0.2);
+  transition: all 0.3s ease;
+  animation: slideUp 0.8s ease-out 0.4s backwards;
+}
+
+.dessert-hero-btn-secondary:hover {
+  transform: translateY(-3px) scale(1.03);
+  border-color: #FF6B9D;
+  color: #FF6B9D;
+  box-shadow: 0 15px 35px rgba(255, 107, 157, 0.3);
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dessert-hero-banner {
+    min-height: 60vh;
+  }
+  
+  .dessert-element {
+    filter: blur(40px);
+  }
+  
+  .cupcake-peach {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* ============================================
+   OTHER SECTIONS
+   ============================================ */
+
 /* PriPicks Featured Creator Section Animations */
 @keyframes blob {
   0%, 100% { transform: translate(0, 0) scale(1); }
